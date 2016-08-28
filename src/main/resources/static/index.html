@@ -1,12 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+    <title>Aktorsator</title>
 </head>
-<body ng-app="myApp">
+
+<body ng-app="AktorsatorApp">
 
 <div class="main" ng-controller="MainController">
     <h1>{{ title }}</h1>
+
+    <div class="menu">
+
+        <ul>
+            <li>clients</li>
+            <li>products</li>
+            <li>orders</li>
+            <li>transaction</li>
+        </ul>
+
+    </div>
+
+    <div class="tables">
+
+        <div class="clients">
+            <h2>Clients</h2>
+            <table>
+                <tr>
+                    <th>security number</th>
+                    <th>first name</th>
+                    <th>last name</th>
+                    <th>phone number</th>
+                    <th>country</th>
+                    <th>address</th>
+                </tr>
+                <tr>
+                    <td>123</td>
+                    <td>Antos</td>
+                    <td>Macek</td>
+                    <td>666-13-17-999</td>
+                    <td>EU</td>
+                    <td>Tallinn</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="products">
+            <h2>Products</h2>
+            <table>
+                <tr>
+                    <th>barcode</th>
+                    <th>name</th>
+                    <th>base price (EUR)</th>
+                    <th>description</th>
+                    <th>release date</th>
+                </tr>
+                <tr>
+                    <td>123</td>
+                    <td>Antos</td>
+                    <td>666,13</td>
+                    <td>EU</td>
+                    <td>13.12.2013</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="orders">
+            <h2>Orders</h2>
+            <table>
+                <tr>
+                    <th>order number</th>
+                    <th>client</th>
+                    <th>product</th>
+                    <th>converted price</th>
+                    <th>transaction date</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>123</td>
+                    <td>123</td>
+                    <td>666,13</td>
+                    <td>today</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+    <div class="transaction">
+
+
+
+    </div>
+
 </div>
 
 <script src="js/lib/angular.min.js"></script>
