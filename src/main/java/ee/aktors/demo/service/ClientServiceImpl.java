@@ -87,4 +87,7 @@ public class ClientServiceImpl implements ClientService {
         return clients;
     }
 
+    public static List<Client> getClients() {
+        return clients;
+    }
 }

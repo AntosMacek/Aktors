@@ -73,11 +73,14 @@ public class ProductServiceImpl implements ProductService {
 
     private static List<Product> populateDummyProducts() {
         List<Product> products = new ArrayList<Product>();
-        products.add(new Product(counter.incrementAndGet(), "Sam", 12.59f, "slave", new Date(System.currentTimeMillis())));
-        products.add(new Product(counter.incrementAndGet(), "Tomygucci", 5.5f, "toy", new Date(System.currentTimeMillis())));
-        products.add(new Product(counter.incrementAndGet(), "Car", 16.7f, "model", new Date()));
+        products.add(new Product(counter.incrementAndGet(), "Sam", 12.59f, "slave", "15/12/2015"));
+        products.add(new Product(counter.incrementAndGet(), "Tomygucci", 5.5f, "toy", "31.12.1999"));
+        products.add(new Product(counter.incrementAndGet(), "Car", 16.7f, "model", "05-05-2005"));
         return products;
     }
 
+    public static List<Product> getProducts() {
+        return products;
+    }
 }
 

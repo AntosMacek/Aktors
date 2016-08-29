@@ -84,7 +84,7 @@ angular.module('AktorsatorApp').controller('ProductController', ['$scope', 'Prod
 
 
     function reset() {
-        self.product = {barcode: null, firstName: '', lastName: '', phoneNumber: '', country: '', address: ''};
+        self.product = {barcode: null, name: '', basePrice: '', description: '', releaseDate: ''};
         $scope.productForm.$setPristine(); //reset Form
     }
 

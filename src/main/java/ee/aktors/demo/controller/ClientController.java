@@ -63,7 +63,7 @@ public class ClientController {
         clientService.saveClient(client);
 
         HttpHeaders headers = new HttpHeaders();
-        headers.setLocation(ucBuilder.path("/client/{id}").buildAndExpand(client.getSecurityNumber()).toUri());
+        headers.setLocation(ucBuilder.path("/client/{securityNumber}").buildAndExpand(client.getSecurityNumber()).toUri());
         return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
     }
 

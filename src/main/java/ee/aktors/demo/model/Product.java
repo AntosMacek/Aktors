@@ -8,12 +8,12 @@ public class Product {
     private String name;
     private float basePrice;
     private String description;
-    private Date releaseDate;
+    private String releaseDate;
 
     public Product() {
     }
 
-    public Product(long barcode, String name, float basePrice, String description, Date releaseDate) {
+    public Product(long barcode, String name, float basePrice, String description, String releaseDate) {
         this.barcode = barcode;
         this.name = name;
         this.basePrice = basePrice;
@@ -53,11 +53,20 @@ public class Product {
         this.description = description;
     }
 
-    public Date getReleaseDate() {
+    public String getReleaseDate() {
         return releaseDate;
     }
 
-    public void setReleaseDate(Date releaseDate) {
+    public void setReleaseDate(String releaseDate) {
         this.releaseDate = releaseDate;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "barcode=" + barcode +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                '}';
     }
 }

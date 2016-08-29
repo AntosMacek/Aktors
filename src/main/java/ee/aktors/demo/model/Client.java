@@ -73,4 +73,13 @@ public class Client {
         return firstName + " " + lastName;
     }
 
+    @Override
+    public String toString() {
+        return "Client{" +
+                "securityNumber=" + securityNumber +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", country=" + country +
+                '}';
+    }
 }
