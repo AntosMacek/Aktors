@@ -2,7 +2,7 @@ package ee.aktors.demo.model;
 
 public enum Country {
 
-    EUROPEAN_UNION,
+    EU,
     USA,
     CHINA,
     AUSTRALIA,

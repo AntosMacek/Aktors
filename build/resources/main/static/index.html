@@ -15,7 +15,6 @@
             <li>clients</li>
             <li>products</li>
             <li>orders</li>
-            <li>transaction</li>
         </ul>
 
     </div>
@@ -24,80 +23,193 @@
 
         <div class="clients">
             <h2>Clients</h2>
-            <table>
-                <tr>
-                    <th>security number</th>
-                    <th>first name</th>
-                    <th>last name</th>
-                    <th>phone number</th>
-                    <th>country</th>
-                    <th>address</th>
-                </tr>
-                <tr>
-                    <td>123</td>
-                    <td>Antos</td>
-                    <td>Macek</td>
-                    <td>666-13-17-999</td>
-                    <td>EU</td>
-                    <td>Tallinn</td>
-                </tr>
-            </table>
+
+
+            <div class="generic-container" ng-controller="ClientController as ctrl">
+
+                <form ng-submit="ctrl.submit()" name="clientForm" class="form-horizontal">
+
+                    <input type="hidden" ng-model="ctrl.client.securityNumber"/>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label class="col-md-2 control-lable" for="fname">First Name</label>
+                            <div class="col-md-7">
+                                <input type="text" ng-model="ctrl.client.firstName" id="fname"
+                                       class="clientFirstName form-control input-sm" placeholder="First name" required
+                                       ng-minlength="3"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label class="col-md-2 control-lable" for="lname">Last Name</label>
+                            <div class="col-md-7">
+                                <input type="text" ng-model="ctrl.client.lastName" id="lname"
+                                       class="clientLastName form-control input-sm" placeholder="Last name" required
+                                       ng-minlength="3"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label class="col-md-2 control-lable" for="phnumber">Phone number</label>
+                            <div class="col-md-7">
+                                <input type="text" ng-model="ctrl.client.phoneNumber" id="phnumber"
+                                       class="clientPhoneNumber form-control input-sm" placeholder="Phone number" required
+                                       ng-minlength="3"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label class="col-md-2 control-lable" for="country">Country</label>
+                            <div class="col-md-7">
+                                <input type="text" ng-model="ctrl.client.country" id="country"
+                                       class="country form-control input-sm" placeholder="Country" required/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label class="col-md-2 control-lable" for="address">Address</label>
+                            <div class="col-md-7">
+                                <input type="text" ng-model="ctrl.client.address" id="address"
+                                       class="form-control input-sm"
+                                       placeholder="Address"/>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="form-actions floatRight">
+                            <input type="submit" value="{{!ctrl.client.securityNumber ? 'Add' : 'Update'}}"
+                                   class="btn btn-primary btn-sm" ng-disabled="clientForm.$invalid">
+                            <button type="button" ng-click="ctrl.reset()" class="btn btn-warning btn-sm"
+                                    ng-disabled="clientForm.$pristine">Reset Form
+                            </button>
+                        </div>
+                    </div>
+
+                </form>
+
+                <div class="panel panel-default">
+                    <!-- Default panel contents -->
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>Security number</th>
+                            <th>First name</th>
+                            <th>Last name</th>
+                            <th>Phone number</th>
+                            <th>Country</th>
+                            <th>Address</th>
+                            <th width="20%"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="c in ctrl.clients">
+                            <td><span ng-bind="c.securityNumber"></span></td>
+                            <td><span ng-bind="c.firstName"></span></td>
+                            <td><span ng-bind="c.lastName"></span></td>
+                            <td><span ng-bind="c.phoneNumber"></span></td>
+                            <td><span ng-bind="c.country"></span></td>
+                            <td><span ng-bind="c.address"></span></td>
+                            <td>
+                                <button type="button" ng-click="ctrl.edit(c.securityNumber)" class="btn btn-success custom-width">
+                                    Edit
+                                </button>
+                                <button type="button" ng-click="ctrl.remove(c.securityNumber)" class="btn btn-danger custom-width">
+                                    Remove
+                                </button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+
+                <table>
+                    <tr>
+                        <th>security number</th>
+                        <th>first name</th>
+                        <th>last name</th>
+                        <th>phone number</th>
+                        <th>country</th>
+                        <th>address</th>
+                    </tr>
+                    <tr>
+                        <td>123</td>
+                        <td>Antos</td>
+                        <td>Macek</td>
+                        <td>666-13-17-999</td>
+                        <td>EU</td>
+                        <td>Tallinn</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="products">
+                <h2>Products</h2>
+                <table>
+                    <tr>
+                        <th>barcode</th>
+                        <th>name</th>
+                        <th>base price (EUR)</th>
+                        <th>description</th>
+                        <th>release date</th>
+                    </tr>
+                    <tr>
+                        <td>123</td>
+                        <td>Antos</td>
+                        <td>666,13</td>
+                        <td>EU</td>
+                        <td>13.12.2013</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="orders">
+                <h2>Orders</h2>
+                <table>
+                    <tr>
+                        <th>order number</th>
+                        <th>client</th>
+                        <th>product</th>
+                        <th>converted price</th>
+                        <th>transaction date</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>123</td>
+                        <td>123</td>
+                        <td>666,13</td>
+                        <td>today</td>
+                    </tr>
+                </table>
+            </div>
+
         </div>
 
-        <div class="products">
-            <h2>Products</h2>
-            <table>
-                <tr>
-                    <th>barcode</th>
-                    <th>name</th>
-                    <th>base price (EUR)</th>
-                    <th>description</th>
-                    <th>release date</th>
-                </tr>
-                <tr>
-                    <td>123</td>
-                    <td>Antos</td>
-                    <td>666,13</td>
-                    <td>EU</td>
-                    <td>13.12.2013</td>
-                </tr>
-            </table>
-        </div>
+        <div class="transaction">
 
-        <div class="orders">
-            <h2>Orders</h2>
-            <table>
-                <tr>
-                    <th>order number</th>
-                    <th>client</th>
-                    <th>product</th>
-                    <th>converted price</th>
-                    <th>transaction date</th>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>123</td>
-                    <td>123</td>
-                    <td>666,13</td>
-                    <td>today</td>
-                </tr>
-            </table>
+
         </div>
 
     </div>
 
-    <div class="transaction">
-
-
-
-    </div>
-
-</div>
-
-<script src="js/lib/angular.min.js"></script>
-<script src="js/lib/angular-resource.min.js"></script>
-<script src="js/app.js"></script>
-<script src="js/controllers/MainController.js"></script>
+    <script src="js/lib/angular.min.js"></script>
+    <script src="js/lib/angular-resource.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/MainController.js"></script>
+    <script src="js/controllers/ClientController.js"></script>
+    <script src="js/services/ClientService.js"></script>
 
 </body>
 </html>
