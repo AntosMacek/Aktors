@@ -5,7 +5,6 @@ angular.module('AktorsatorApp').factory('OrderService', ['$http', '$q', function
     var factory = {
         fetchAllOrders: fetchAllOrders,
         createOrder: createOrder,
-        updateOrder: updateOrder,
         deleteOrder: deleteOrder
     };
 
@@ -35,22 +34,6 @@ angular.module('AktorsatorApp').factory('OrderService', ['$http', '$q', function
                 },
                 function (errResponse) {
                     console.error('Error while creating Order');
-                    deferred.reject(errResponse);
-                }
-            );
-        return deferred.promise;
-    }
-
-
-    function updateOrder(order, orderNr) {
-        var deferred = $q.defer();
-        $http.put(REST_SERVICE_URI + orderNr, order)
-            .then(
-                function (response) {
-                    deferred.resolve(response.data);
-                },
-                function (errResponse) {
-                    console.error('Error while updating Order');
                     deferred.reject(errResponse);
                 }
             );

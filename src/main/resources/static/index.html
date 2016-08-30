@@ -296,15 +296,11 @@
                                 <tbody>
                                 <tr ng-repeat="o in order_ctrl.orders">
                                     <td><span ng-bind="o.orderNr"></span></td>
-                                    <td><span ng-bind="o.client.firstName"></span></td>
-                                    <td><span ng-bind="o.product.name"></span></td>
+                                    <td><span ng-bind="o.client"></span></td>
+                                    <td><span ng-bind="o.product"></span></td>
                                     <td><span ng-bind="o.convertedPrice"></span></td>
                                     <td><span ng-bind="o.transactionDate"></span></td>
                                     <td>
-                                        <button type="button" ng-click="order_ctrl.edit(o.orderNr)"
-                                                class="btn btn-success custom-width">
-                                            Edit
-                                        </button>
                                         <button type="button" ng-click="order_ctrl.remove(o.orderNr)"
                                                 class="btn btn-danger custom-width">
                                             Remove

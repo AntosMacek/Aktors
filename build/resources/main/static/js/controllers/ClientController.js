@@ -1,6 +1,6 @@
 angular.module('AktorsatorApp').controller('ClientController', ['$scope', 'ClientService', function ($scope, ClientService) {
     var self = this;
-    self.client = {securityNumber: null, firstName: '', lastName: '', phoneNumber: '', country: '', address: ''};
+    self.client = {securityNumber: null, firstName: '', lastName: '', phoneNumber: '', country: '', address: '', represent: ''};
     self.clients = [];
 
     self.submit = submit;

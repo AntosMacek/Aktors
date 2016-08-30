@@ -8,6 +8,7 @@ public class Client {
     private String phoneNumber;
     private Country country;
     private String address;
+    private String represent;
 
     public Client() {
     }
@@ -19,6 +20,7 @@ public class Client {
         this.phoneNumber = phoneNumber;
         this.country = country;
         this.address = address;
+        this.represent = firstName + " " + lastName + " " + securityNumber;
     }
 
     public long getSecurityNumber() {
@@ -73,13 +75,11 @@ public class Client {
         return firstName + " " + lastName;
     }
 
-    @Override
-    public String toString() {
-        return "Client{" +
-                "securityNumber=" + securityNumber +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", country=" + country +
-                '}';
+    public String getRepresent() {
+        return represent;
+    }
+
+    public void setRepresent(String represent) {
+        this.represent = represent;
     }
 }

@@ -63,9 +63,9 @@ public class OrderServiceImpl implements OrderService {
 
     private static List<Order> populateDummyOrders() {
         List<Order> orders = new ArrayList<Order>();
-        orders.add(new Order(counter.incrementAndGet(), ClientServiceImpl.getClients().get(0), ProductServiceImpl.getProducts().get(1), 12.3f, "15/2/2003"));
-        orders.add(new Order(counter.incrementAndGet(), ClientServiceImpl.getClients().get(2), ProductServiceImpl.getProducts().get(0), 12.3f, "07/18/2000"));
-        orders.add(new Order(counter.incrementAndGet(), ClientServiceImpl.getClients().get(1), ProductServiceImpl.getProducts().get(1), 12.3f, "29.08.2077"));
+        orders.add(new Order(counter.incrementAndGet(), ClientServiceImpl.getClients().get(0).getRepresent(), ProductServiceImpl.getProducts().get(1).getName(), 12.3f, "15/2/2003"));
+        orders.add(new Order(counter.incrementAndGet(), ClientServiceImpl.getClients().get(2).getRepresent(), ProductServiceImpl.getProducts().get(0).getName(), 12.3f, "07/18/2000"));
+        orders.add(new Order(counter.incrementAndGet(), ClientServiceImpl.getClients().get(1).getRepresent(), ProductServiceImpl.getProducts().get(1).getName(), 12.3f, "29.08.2077"));
         return orders;
     }
 

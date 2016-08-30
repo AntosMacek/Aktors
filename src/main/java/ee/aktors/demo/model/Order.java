@@ -1,19 +1,19 @@
 package ee.aktors.demo.model;
 
-import java.util.Date;
-
 public class Order {
 
     private long orderNr;
-    private Client client;
-    private Product product;
+//    private Client client;
+//    private Product product;
+    private String client;
+    private String product;
     private float convertedPrice;
     private String transactionDate;
 
     public Order() {
     }
 
-    public Order(long orderNr, Client client, Product product, float convertedPrice, String transactionDate) {
+    public Order(long orderNr, String client, String product, float convertedPrice, String transactionDate) {
         this.orderNr = orderNr;
         this.client = client;
         this.product = product;
@@ -29,19 +29,19 @@ public class Order {
         this.orderNr = orderNr;
     }
 
-    public Client getClient() {
+    public String getClient() {
         return client;
     }
 
-    public void setClient(Client client) {
+    public void setClient(String client) {
         this.client = client;
     }
 
-    public Product getProduct() {
+    public String getProduct() {
         return product;
     }
 
-    public void setProduct(Product product) {
+    public void setProduct(String product) {
         this.product = product;
     }
 

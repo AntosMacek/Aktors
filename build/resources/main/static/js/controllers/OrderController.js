@@ -4,7 +4,6 @@ angular.module('AktorsatorApp').controller('OrderController', ['$scope', 'OrderS
     self.orders = [];
 
     self.submit = submit;
-    self.edit = edit;
     self.remove = remove;
     self.reset = reset;
 
@@ -33,16 +32,6 @@ angular.module('AktorsatorApp').controller('OrderController', ['$scope', 'OrderS
             );
     }
 
-    function updateOrder(order, orderNr) {
-        OrderService.updateOrder(order, orderNr)
-            .then(
-                fetchAllOrders,
-                function (errResponse) {
-                    console.error('Error while updating Order');
-                }
-            );
-    }
-
     function deleteOrder(orderNr) {
         OrderService.deleteOrder(orderNr)
             .then(
@@ -62,16 +51,6 @@ angular.module('AktorsatorApp').controller('OrderController', ['$scope', 'OrderS
             console.log('Order updated with number ', self.order.orderNr);
         }
         reset();
-    }
-
-    function edit(orderNr) {
-        console.log('Order (number) to be edited', orderNr);
-        for (var i = 0; i < self.orders.length; i++) {
-            if (self.orders[i].number === orderNr) {
-                self.order = angular.copy(self.orders[i]);
-                break;
-            }
-        }
     }
 
     function remove(orderNr) {
