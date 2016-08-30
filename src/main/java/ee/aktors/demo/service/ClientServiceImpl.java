@@ -4,9 +4,7 @@ import ee.aktors.demo.model.Client;
 import ee.aktors.demo.model.Country;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
 
 @Service("clientService")
@@ -16,6 +14,7 @@ public class ClientServiceImpl implements ClientService {
 
     private static List<Client> clients;
     private static List<String> clientsRepresents = new ArrayList<>();
+    private static Map<String, Client> clientRepresentationMap = new HashMap<>();
 
     static {
         clients = populateDummyClients();
@@ -55,15 +54,17 @@ public class ClientServiceImpl implements ClientService {
 
     public void saveClient(Client client) {
         client.setSecurityNumber(counter.incrementAndGet());
-        clientsRepresents.add(client.getFirstName() + " " + client.getLastName() + " " + client.getSecurityNumber());
+        String representer = client.getFirstName() + " " + client.getLastName() + " " + client.getSecurityNumber();
+        clientsRepresents.add(representer);
+        clientRepresentationMap.put(representer, client);
         clients.add(client);
-        for (Client s : clients)
-            System.out.println(s);
     }
 
     public void updateClient(Client client) {
         int index = clients.indexOf(client);
-        clientsRepresents.set(index, client.getFirstName() + " " + client.getLastName() + " " + client.getSecurityNumber());
+        String representer = client.getFirstName() + " " + client.getLastName() + " " + client.getSecurityNumber();
+        clientRepresentationMap.put(representer, client);
+        clientsRepresents.set(index, representer);
         clients.set(index, client);
     }
 
@@ -101,9 +102,15 @@ public class ClientServiceImpl implements ClientService {
         clients.add(c1);
         clients.add(c2);
         clients.add(c3);
-        clientsRepresents.add(c1.getFirstName() + " " + c1.getLastName() + " " + c1.getSecurityNumber());
-        clientsRepresents.add(c2.getFirstName() + " " + c2.getLastName() + " " + c2.getSecurityNumber());
-        clientsRepresents.add(c3.getFirstName() + " " + c3.getLastName() + " " + c3.getSecurityNumber());
+        String representer1 = c1.getFirstName() + " " + c1.getLastName() + " " + c1.getSecurityNumber();
+        String representer2 = c2.getFirstName() + " " + c2.getLastName() + " " + c2.getSecurityNumber();
+        String representer3 = c3.getFirstName() + " " + c3.getLastName() + " " + c3.getSecurityNumber();
+        clientsRepresents.add(representer1);
+        clientsRepresents.add(representer2);
+        clientsRepresents.add(representer3);
+        clientRepresentationMap.put(representer1, c1);
+        clientRepresentationMap.put(representer2, c2);
+        clientRepresentationMap.put(representer3, c3);
         return clients;
     }
 
@@ -121,5 +128,9 @@ public class ClientServiceImpl implements ClientService {
 
     public static List<String> getClientsRepresents() {
         return clientsRepresents;
+    }
+
+    public static Map<String, Client> getClientRepresentationMap() {
+        return clientRepresentationMap;
     }
 }

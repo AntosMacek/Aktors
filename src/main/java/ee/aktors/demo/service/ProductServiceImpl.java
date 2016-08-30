@@ -4,10 +4,7 @@ package ee.aktors.demo.service;
 import ee.aktors.demo.model.Product;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
 
 @Service("productService")
@@ -17,6 +14,7 @@ public class ProductServiceImpl implements ProductService {
 
     private static List<Product> products;
     private static List<String> productsRepresents = new ArrayList<>();
+    private static Map<String, Product> productRepresentationMap = new HashMap<>();
 
     static {
         products = populateDummyProducts();
@@ -46,13 +44,17 @@ public class ProductServiceImpl implements ProductService {
 
     public void saveProduct(Product product) {
         product.setBarcode(counter.incrementAndGet());
-        productsRepresents.add(product.getName());
+        String representer = product.getName();
+        productsRepresents.add(representer);
+        productRepresentationMap.put(representer, product);
         products.add(product);
     }
 
     public void updateProduct(Product product) {
         int index = products.indexOf(product);
-        productsRepresents.set(index, product.getName());
+        String representer = product.getName();
+        productRepresentationMap.put(representer, product);
+        productsRepresents.set(index, representer);
         products.set(index, product);
     }
 
@@ -84,15 +86,24 @@ public class ProductServiceImpl implements ProductService {
 
     private static List<Product> populateDummyProducts() {
         List<Product> products = new ArrayList<Product>();
-        Product p1 = new Product(counter.incrementAndGet(), "Sam", 12.59f, "slave", "15/12/2015");
-        Product p2 = new Product(counter.incrementAndGet(), "Tomygucci", 5.5f, "toy", "31.12.1999");
-        Product p3 = new Product(counter.incrementAndGet(), "Car", 16.7f, "model", "05-05-2005");
+//        Product p1 = new Product(counter.incrementAndGet(), "Sam", 12.59f, "slave", "15/12/2015");
+//        Product p2 = new Product(counter.incrementAndGet(), "Tomygucci", 5.5f, "toy", "31.12.1999");
+//        Product p3 = new Product(counter.incrementAndGet(), "Car", 16.7f, "model", "05-05-2005");
+        Product p1 = new Product(counter.incrementAndGet(), "Sam", 12.59f, "slave", System.currentTimeMillis());
+        Product p2 = new Product(counter.incrementAndGet(), "Tomygucci", 5.5f, "toy", System.currentTimeMillis());
+        Product p3 = new Product(counter.incrementAndGet(), "Car", 16.7f, "model", System.currentTimeMillis());
         products.add(p1);
         products.add(p2);
         products.add(p3);
+        String representer1 = p1.getName();
+        String representer2 = p2.getName();
+        String representer3 = p3.getName();
         productsRepresents.add(p1.getName());
         productsRepresents.add(p2.getName());
         productsRepresents.add(p3.getName());
+        productRepresentationMap.put(representer1, p1);
+        productRepresentationMap.put(representer2, p2);
+        productRepresentationMap.put(representer3, p3);
         return products;
     }
 
@@ -110,6 +121,10 @@ public class ProductServiceImpl implements ProductService {
 
     public static List<String> getProductsRepresents() {
         return productsRepresents;
+    }
+
+    public static Map<String, Product> getProductRepresentationMap() {
+        return productRepresentationMap;
     }
 }
 

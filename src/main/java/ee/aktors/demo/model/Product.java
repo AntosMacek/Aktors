@@ -8,12 +8,13 @@ public class Product {
     private String name;
     private float basePrice;
     private String description;
-    private String releaseDate;
+//    private String releaseDate;
+    private long releaseDate;
 
     public Product() {
     }
 
-    public Product(long barcode, String name, float basePrice, String description, String releaseDate) {
+    public Product(long barcode, String name, float basePrice, String description, long releaseDate) {
         this.barcode = barcode;
         this.name = name;
         this.basePrice = basePrice;
@@ -53,11 +54,11 @@ public class Product {
         this.description = description;
     }
 
-    public String getReleaseDate() {
+    public long getReleaseDate() {
         return releaseDate;
     }
 
-    public void setReleaseDate(String releaseDate) {
+    public void setReleaseDate(long releaseDate) {
         this.releaseDate = releaseDate;
     }
 

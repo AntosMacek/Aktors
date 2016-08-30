@@ -201,7 +201,7 @@
                                 <td><span ng-bind="p.name"></span></td>
                                 <td><span ng-bind="p.basePrice"></span></td>
                                 <td><span ng-bind="p.description"></span></td>
-                                <td><span ng-bind="p.releaseDate"></span></td>
+                                <td><span>{{ p.releaseDate | date }}</span></td>
                                 <td>
                                     <button type="button" ng-click="prod_ctrl.edit(p.barcode)"
                                             class="btn btn-success custom-width">

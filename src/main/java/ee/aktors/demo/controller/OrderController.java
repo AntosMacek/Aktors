@@ -70,25 +70,25 @@ public class OrderController {
 
     //------------------- Update a Order --------------------------------------------------------
 
-    @RequestMapping(value = "/order/{orderNr}", method = RequestMethod.PUT)
-    public ResponseEntity<Order> updateOrder(@PathVariable("orderNr") long orderNr, @RequestBody Order order) {
-        System.out.println("Updating Order " + orderNr);
-
-        Order currentOrder = orderService.findByNumber(orderNr);
-
-        if (currentOrder == null) {
-            System.out.println("Order with number " + orderNr + " not found");
-            return new ResponseEntity<Order>(HttpStatus.NOT_FOUND);
-        }
-
-        currentOrder.setClient(order.getClient());
-        currentOrder.setProduct(order.getProduct());
-        currentOrder.setConvertedPrice(order.getConvertedPrice());
-        currentOrder.setTransactionDate(order.getTransactionDate());
-
-        orderService.updateOrder(currentOrder);
-        return new ResponseEntity<Order>(currentOrder, HttpStatus.OK);
-    }
+//    @RequestMapping(value = "/order/{orderNr}", method = RequestMethod.PUT)
+//    public ResponseEntity<Order> updateOrder(@PathVariable("orderNr") long orderNr, @RequestBody Order order) {
+//        System.out.println("Updating Order " + orderNr);
+//
+//        Order currentOrder = orderService.findByNumber(orderNr);
+//
+//        if (currentOrder == null) {
+//            System.out.println("Order with number " + orderNr + " not found");
+//            return new ResponseEntity<Order>(HttpStatus.NOT_FOUND);
+//        }
+//
+//        currentOrder.setClient(order.getClient());
+//        currentOrder.setProduct(order.getProduct());
+//        currentOrder.setConvertedPrice(order.getConvertedPrice());
+//        currentOrder.setTransactionDate(order.getTransactionDate());
+//
+//        orderService.updateOrder(currentOrder);
+//        return new ResponseEntity<Order>(currentOrder, HttpStatus.OK);
+//    }
 
 
     //------------------- Delete a Order --------------------------------------------------------

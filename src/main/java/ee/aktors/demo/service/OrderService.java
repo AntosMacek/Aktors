@@ -10,7 +10,7 @@ public interface OrderService {
 
     void saveOrder(Order order);
 
-    void updateOrder(Order order);
+//    void updateOrder(Order order);
 
     void deleteOrderByNumber(long number);
 

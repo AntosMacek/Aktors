@@ -29,7 +29,7 @@
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">1</div>
+<div class="counter">0</div>
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.003s</div>
+<div class="counter">0.018s</div>
 <p>duration</p>
 </div>
 </td>
@@ -50,8 +50,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox failures" id="successRate">
-<div class="percent">0%</div>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
 <p>successful</p>
 </div>
 </td>
@@ -61,100 +61,13 @@
 <div id="tabs">
 <ul class="tabLinks">
 <li>
-<a href="#tab0">Failed tests</a>
+<a href="#tab0">Tests</a>
 </li>
 <li>
-<a href="#tab1">Tests</a>
-</li>
-<li>
-<a href="#tab2">Standard output</a>
+<a href="#tab1">Standard output</a>
 </li>
 </ul>
 <div id="tab0" class="tab">
-<h2>Failed tests</h2>
-<div class="test">
-<a name="contextLoads"></a>
-<h3 class="failures">contextLoads</h3>
-<span class="code">
-<pre>java.lang.IllegalStateException: Failed to load ApplicationContext
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
-	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
-	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:189)
-	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:131)
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.runTestClass(JUnitTestClassExecuter.java:114)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.execute(JUnitTestClassExecuter.java:57)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassProcessor.processTestClass(JUnitTestClassProcessor.java:66)
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
-	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:109)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:377)
-	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:54)
-	at org.gradle.internal.concurrent.StoppableExecutorImpl$1.run(StoppableExecutorImpl.java:40)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'orderController': Unsatisfied dependency expressed through field 'orderService': No qualifying bean of type [ee.aktors.demo.service.OrderService] found for dependency [ee.aktors.demo.service.OrderService]: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [ee.aktors.demo.service.OrderService] found for dependency [ee.aktors.demo.service.OrderService]: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:569)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:349)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1214)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
-	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:776)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:861)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:541)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:369)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:313)
-	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:111)
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
-	... 45 more
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [ee.aktors.demo.service.OrderService] found for dependency [ee.aktors.demo.service.OrderService]: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1406)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1057)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1019)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:566)
-	... 63 more
-</pre>
-</span>
-</div>
-</div>
-<div id="tab1" class="tab">
 <h2>Tests</h2>
 <table>
 <thead>
@@ -165,51 +78,51 @@ Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No q
 </tr>
 </thead>
 <tr>
-<td class="failures">contextLoads</td>
-<td>0.003s</td>
-<td class="failures">failed</td>
+<td class="success">contextLoads</td>
+<td>0.018s</td>
+<td class="success">passed</td>
 </tr>
 </table>
 </div>
-<div id="tab2" class="tab">
+<div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>16:21:10.131 [Test worker] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class ee.aktors.demo.AktorsDemoApplicationTests]
-16:21:10.138 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
-16:21:10.145 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
-16:21:10.163 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [ee.aktors.demo.AktorsDemoApplicationTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
-16:21:10.176 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [ee.aktors.demo.AktorsDemoApplicationTests], using SpringBootContextLoader
-16:21:10.179 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [ee.aktors.demo.AktorsDemoApplicationTests]: class path resource [ee/aktors/demo/AktorsDemoApplicationTests-context.xml] does not exist
-16:21:10.180 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [ee.aktors.demo.AktorsDemoApplicationTests]: class path resource [ee/aktors/demo/AktorsDemoApplicationTestsContext.groovy] does not exist
-16:21:10.180 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [ee.aktors.demo.AktorsDemoApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
-16:21:10.181 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [ee.aktors.demo.AktorsDemoApplicationTests]: AktorsDemoApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-16:21:10.232 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [ee.aktors.demo.AktorsDemoApplicationTests]
-16:21:10.279 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
-16:21:10.280 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
-16:21:10.281 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
-16:21:10.292 [Test worker] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Resolved classpath location [ee/aktors/demo/] to resources [URL [file:/home/antos/Documents/code/IdeaProjects/AktorsDemo/build/classes/test/ee/aktors/demo/], URL [file:/home/antos/Documents/code/IdeaProjects/AktorsDemo/build/classes/main/ee/aktors/demo/]]
-16:21:10.292 [Test worker] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Looking for matching resources in directory tree [/home/antos/Documents/code/IdeaProjects/AktorsDemo/build/classes/test/ee/aktors/demo]
-16:21:10.292 [Test worker] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Searching directory [/home/antos/Documents/code/IdeaProjects/AktorsDemo/build/classes/test/ee/aktors/demo] for files matching pattern [/home/antos/Documents/code/IdeaProjects/AktorsDemo/build/classes/test/ee/aktors/demo/*.class]
-16:21:10.297 [Test worker] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Looking for matching resources in directory tree [/home/antos/Documents/code/IdeaProjects/AktorsDemo/build/classes/main/ee/aktors/demo]
-16:21:10.297 [Test worker] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Searching directory [/home/antos/Documents/code/IdeaProjects/AktorsDemo/build/classes/main/ee/aktors/demo] for files matching pattern [/home/antos/Documents/code/IdeaProjects/AktorsDemo/build/classes/main/ee/aktors/demo/*.class]
-16:21:10.298 [Test worker] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Resolved location pattern [classpath*:ee/aktors/demo/*.class] to resources [file [/home/antos/Documents/code/IdeaProjects/AktorsDemo/build/classes/test/ee/aktors/demo/AktorsDemoApplicationTests.class], file [/home/antos/Documents/code/IdeaProjects/AktorsDemo/build/classes/main/ee/aktors/demo/AktorsDemoApplication.class]]
-16:21:10.353 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/home/antos/Documents/code/IdeaProjects/AktorsDemo/build/classes/main/ee/aktors/demo/AktorsDemoApplication.class]
-16:21:10.354 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration ee.aktors.demo.AktorsDemoApplication for test class ee.aktors.demo.AktorsDemoApplicationTests
-16:21:10.359 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [ee.aktors.demo.AktorsDemoApplicationTests]: using defaults.
-16:21:10.366 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.AutoConfigureReportTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-16:21:10.385 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1bf19253, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@4c181b70, org.springframework.boot.test.autoconfigure.AutoConfigureReportTestExecutionListener@1753850c, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@66bc0cd4, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7148695a, org.springframework.test.context.transaction.TransactionalTestExecutionListener@7d072f98, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7677bed1, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@702bc667, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@429b6381, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6a4ffa5, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@4dee4896]
-16:21:10.389 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [ee.aktors.demo.AktorsDemoApplicationTests]
-16:21:10.389 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [ee.aktors.demo.AktorsDemoApplicationTests]
-16:21:10.390 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [ee.aktors.demo.AktorsDemoApplicationTests]
-16:21:10.391 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [ee.aktors.demo.AktorsDemoApplicationTests]
-16:21:10.396 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@4d727b4e testClass = AktorsDemoApplicationTests, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@671dd7a2 testClass = AktorsDemoApplicationTests, locations = '{}', classes = '{class ee.aktors.demo.AktorsDemoApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.SpringBootTestContextCustomizer@7b07dfd4, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@7bd708b5, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]]], class annotated with @DirtiesContext [false] with mode [null].
-16:21:10.397 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [ee.aktors.demo.AktorsDemoApplicationTests]
-16:21:10.397 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [ee.aktors.demo.AktorsDemoApplicationTests]
-16:21:10.431 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
-16:21:10.432 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
-16:21:10.432 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
-16:21:10.434 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=-1}
-16:21:10.434 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Adding [Inlined Test Properties] PropertySource with highest search precedence
+<pre>18:18:47.204 [Test worker] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class ee.aktors.demo.AktorsDemoApplicationTests]
+18:18:47.209 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+18:18:47.216 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+18:18:47.232 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [ee.aktors.demo.AktorsDemoApplicationTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+18:18:47.243 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [ee.aktors.demo.AktorsDemoApplicationTests], using SpringBootContextLoader
+18:18:47.247 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [ee.aktors.demo.AktorsDemoApplicationTests]: class path resource [ee/aktors/demo/AktorsDemoApplicationTests-context.xml] does not exist
+18:18:47.247 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [ee.aktors.demo.AktorsDemoApplicationTests]: class path resource [ee/aktors/demo/AktorsDemoApplicationTestsContext.groovy] does not exist
+18:18:47.248 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [ee.aktors.demo.AktorsDemoApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+18:18:47.248 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [ee.aktors.demo.AktorsDemoApplicationTests]: AktorsDemoApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+18:18:47.298 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [ee.aktors.demo.AktorsDemoApplicationTests]
+18:18:47.343 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
+18:18:47.344 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
+18:18:47.345 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+18:18:47.354 [Test worker] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Resolved classpath location [ee/aktors/demo/] to resources [URL [file:/home/antos/Documents/code/IdeaProjects/AktorsDemo/build/classes/test/ee/aktors/demo/], URL [file:/home/antos/Documents/code/IdeaProjects/AktorsDemo/build/classes/main/ee/aktors/demo/]]
+18:18:47.355 [Test worker] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Looking for matching resources in directory tree [/home/antos/Documents/code/IdeaProjects/AktorsDemo/build/classes/test/ee/aktors/demo]
+18:18:47.355 [Test worker] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Searching directory [/home/antos/Documents/code/IdeaProjects/AktorsDemo/build/classes/test/ee/aktors/demo] for files matching pattern [/home/antos/Documents/code/IdeaProjects/AktorsDemo/build/classes/test/ee/aktors/demo/*.class]
+18:18:47.358 [Test worker] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Looking for matching resources in directory tree [/home/antos/Documents/code/IdeaProjects/AktorsDemo/build/classes/main/ee/aktors/demo]
+18:18:47.359 [Test worker] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Searching directory [/home/antos/Documents/code/IdeaProjects/AktorsDemo/build/classes/main/ee/aktors/demo] for files matching pattern [/home/antos/Documents/code/IdeaProjects/AktorsDemo/build/classes/main/ee/aktors/demo/*.class]
+18:18:47.360 [Test worker] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Resolved location pattern [classpath*:ee/aktors/demo/*.class] to resources [file [/home/antos/Documents/code/IdeaProjects/AktorsDemo/build/classes/test/ee/aktors/demo/AktorsDemoApplicationTests.class], file [/home/antos/Documents/code/IdeaProjects/AktorsDemo/build/classes/main/ee/aktors/demo/AktorsDemoApplication.class]]
+18:18:47.407 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/home/antos/Documents/code/IdeaProjects/AktorsDemo/build/classes/main/ee/aktors/demo/AktorsDemoApplication.class]
+18:18:47.408 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration ee.aktors.demo.AktorsDemoApplication for test class ee.aktors.demo.AktorsDemoApplicationTests
+18:18:47.412 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [ee.aktors.demo.AktorsDemoApplicationTests]: using defaults.
+18:18:47.418 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.AutoConfigureReportTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+18:18:47.433 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1bf19253, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@4c181b70, org.springframework.boot.test.autoconfigure.AutoConfigureReportTestExecutionListener@1753850c, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@66bc0cd4, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7148695a, org.springframework.test.context.transaction.TransactionalTestExecutionListener@7d072f98, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7677bed1, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@702bc667, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@429b6381, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6a4ffa5, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@4dee4896]
+18:18:47.435 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [ee.aktors.demo.AktorsDemoApplicationTests]
+18:18:47.436 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [ee.aktors.demo.AktorsDemoApplicationTests]
+18:18:47.437 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [ee.aktors.demo.AktorsDemoApplicationTests]
+18:18:47.437 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [ee.aktors.demo.AktorsDemoApplicationTests]
+18:18:47.442 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@4d727b4e testClass = AktorsDemoApplicationTests, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@671dd7a2 testClass = AktorsDemoApplicationTests, locations = '{}', classes = '{class ee.aktors.demo.AktorsDemoApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.SpringBootTestContextCustomizer@7b07dfd4, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@7bd708b5, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]]], class annotated with @DirtiesContext [false] with mode [null].
+18:18:47.442 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [ee.aktors.demo.AktorsDemoApplicationTests]
+18:18:47.442 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [ee.aktors.demo.AktorsDemoApplicationTests]
+18:18:47.471 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
+18:18:47.471 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
+18:18:47.472 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+18:18:47.473 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=-1}
+18:18:47.474 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Adding [Inlined Test Properties] PropertySource with highest search precedence
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -219,172 +132,241 @@ Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No q
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::        (v1.4.0.RELEASE)
 
-2016-08-29 16:21:10.822  INFO 18612 --- [    Test worker] e.a.demo.AktorsDemoApplicationTests      : Starting AktorsDemoApplicationTests on ordi with PID 18612 (started by antos in /home/antos/Documents/code/IdeaProjects/AktorsDemo)
-2016-08-29 16:21:10.824  INFO 18612 --- [    Test worker] e.a.demo.AktorsDemoApplicationTests      : No active profile set, falling back to default profiles: default
-2016-08-29 16:21:10.867  INFO 18612 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@29d56aea: startup date [Mon Aug 29 16:21:10 EEST 2016]; root of context hierarchy
-2016-08-29 16:21:10.868 DEBUG 18612 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Bean factory for org.springframework.web.context.support.GenericWebApplicationContext@29d56aea: org.springframework.beans.factory.support.DefaultListableBeanFactory@72354a69: defining beans [org.springframework.boot.test.mock.mockito.MockitoPostProcessor$SpyPostProcessor,org.springframework.boot.test.mock.mockito.MockitoPostProcessor,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.event.internalEventListenerProcessor,org.springframework.context.event.internalEventListenerFactory,aktorsDemoApplication]; root of factory hierarchy
-2016-08-29 16:21:12.081  INFO 18612 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [class org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$b7d7d92f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2016-08-29 16:21:12.132  INFO 18612 --- [    Test worker] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
-2016-08-29 16:21:12.147  INFO 18612 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$13401430] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2016-08-29 16:21:12.182 DEBUG 18612 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Unable to locate MessageSource with name 'messageSource': using default [org.springframework.context.support.DelegatingMessageSource@3fba682e]
-2016-08-29 16:21:12.183 DEBUG 18612 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Unable to locate ApplicationEventMulticaster with name 'applicationEventMulticaster': using default [org.springframework.context.event.SimpleApplicationEventMulticaster@64a9f760]
-2016-08-29 16:21:12.228  WARN 18612 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'orderController': Unsatisfied dependency expressed through field 'orderService': No qualifying bean of type [ee.aktors.demo.service.OrderService] found for dependency [ee.aktors.demo.service.OrderService]: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [ee.aktors.demo.service.OrderService] found for dependency [ee.aktors.demo.service.OrderService]: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-2016-08-29 16:21:12.241  INFO 18612 --- [    Test worker] utoConfigurationReportLoggingInitializer : 
-
-Error starting ApplicationContext. To display the auto-configuration report enable debug logging (start with --debug)
-
-
-2016-08-29 16:21:12.258 ERROR 18612 --- [    Test worker] o.s.boot.SpringApplication               : Application startup failed
-
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'orderController': Unsatisfied dependency expressed through field 'orderService': No qualifying bean of type [ee.aktors.demo.service.OrderService] found for dependency [ee.aktors.demo.service.OrderService]: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [ee.aktors.demo.service.OrderService] found for dependency [ee.aktors.demo.service.OrderService]: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:569) ~[spring-beans-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88) ~[spring-beans-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:349) ~[spring-beans-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1214) ~[spring-beans-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543) ~[spring-beans-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482) ~[spring-beans-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:776) ~[spring-beans-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:861) ~[spring-context-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:541) ~[spring-context-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759) ~[spring-boot-1.4.0.RELEASE.jar:1.4.0.RELEASE]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:369) ~[spring-boot-1.4.0.RELEASE.jar:1.4.0.RELEASE]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:313) ~[spring-boot-1.4.0.RELEASE.jar:1.4.0.RELEASE]
-	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:111) [spring-boot-test-1.4.0.RELEASE.jar:1.4.0.RELEASE]
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98) [spring-test-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116) [spring-test-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83) [spring-test-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:189) [spring-test-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:131) [spring-test-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230) [spring-test-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228) [spring-test-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287) [spring-test-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289) [spring-test-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247) [spring-test-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94) [spring-test-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191) [spring-test-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.runTestClass(JUnitTestClassExecuter.java:114) [gradle-testing-jvm-2.14.1.jar:2.14.1]
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.execute(JUnitTestClassExecuter.java:57) [gradle-testing-jvm-2.14.1.jar:2.14.1]
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassProcessor.processTestClass(JUnitTestClassProcessor.java:66) [gradle-testing-jvm-2.14.1.jar:2.14.1]
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) [gradle-testing-base-2.14.1.jar:2.14.1]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_91]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_91]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_91]
-	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_91]
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35) [gradle-messaging-2.14.1.jar:2.14.1]
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) [gradle-messaging-2.14.1.jar:2.14.1]
-	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32) [gradle-messaging-2.14.1.jar:2.14.1]
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93) [gradle-messaging-2.14.1.jar:2.14.1]
-	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source) [na:na]
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:109) [gradle-testing-base-2.14.1.jar:2.14.1]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_91]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_91]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_91]
-	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_91]
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35) [gradle-messaging-2.14.1.jar:2.14.1]
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) [gradle-messaging-2.14.1.jar:2.14.1]
-	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:377) [gradle-messaging-2.14.1.jar:2.14.1]
-	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:54) [gradle-base-services-2.14.1.jar:2.14.1]
-	at org.gradle.internal.concurrent.StoppableExecutorImpl$1.run(StoppableExecutorImpl.java:40) [gradle-base-services-2.14.1.jar:2.14.1]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_91]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_91]
-	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_91]
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [ee.aktors.demo.service.OrderService] found for dependency [ee.aktors.demo.service.OrderService]: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1406) ~[spring-beans-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1057) ~[spring-beans-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1019) ~[spring-beans-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:566) ~[spring-beans-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	... 63 common frames omitted
-
-2016-08-29 16:21:12.263 ERROR 18612 --- [    Test worker] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@1bf19253] to prepare test instance [ee.aktors.demo.AktorsDemoApplicationTests@787afbae]
-
-java.lang.IllegalStateException: Failed to load ApplicationContext
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124) ~[spring-test-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83) ~[spring-test-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:189) ~[spring-test-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:131) ~[spring-test-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230) ~[spring-test-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228) [spring-test-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287) [spring-test-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289) [spring-test-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247) [spring-test-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94) [spring-test-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191) [spring-test-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.runTestClass(JUnitTestClassExecuter.java:114) [gradle-testing-jvm-2.14.1.jar:2.14.1]
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.execute(JUnitTestClassExecuter.java:57) [gradle-testing-jvm-2.14.1.jar:2.14.1]
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassProcessor.processTestClass(JUnitTestClassProcessor.java:66) [gradle-testing-jvm-2.14.1.jar:2.14.1]
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) [gradle-testing-base-2.14.1.jar:2.14.1]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_91]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_91]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_91]
-	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_91]
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35) [gradle-messaging-2.14.1.jar:2.14.1]
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) [gradle-messaging-2.14.1.jar:2.14.1]
-	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32) [gradle-messaging-2.14.1.jar:2.14.1]
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93) [gradle-messaging-2.14.1.jar:2.14.1]
-	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source) [na:na]
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:109) [gradle-testing-base-2.14.1.jar:2.14.1]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_91]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_91]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_91]
-	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_91]
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35) [gradle-messaging-2.14.1.jar:2.14.1]
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) [gradle-messaging-2.14.1.jar:2.14.1]
-	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:377) [gradle-messaging-2.14.1.jar:2.14.1]
-	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:54) [gradle-base-services-2.14.1.jar:2.14.1]
-	at org.gradle.internal.concurrent.StoppableExecutorImpl$1.run(StoppableExecutorImpl.java:40) [gradle-base-services-2.14.1.jar:2.14.1]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_91]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_91]
-	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_91]
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'orderController': Unsatisfied dependency expressed through field 'orderService': No qualifying bean of type [ee.aktors.demo.service.OrderService] found for dependency [ee.aktors.demo.service.OrderService]: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [ee.aktors.demo.service.OrderService] found for dependency [ee.aktors.demo.service.OrderService]: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:569) ~[spring-beans-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88) ~[spring-beans-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:349) ~[spring-beans-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1214) ~[spring-beans-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543) ~[spring-beans-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482) ~[spring-beans-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:776) ~[spring-beans-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:861) ~[spring-context-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:541) ~[spring-context-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759) ~[spring-boot-1.4.0.RELEASE.jar:1.4.0.RELEASE]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:369) ~[spring-boot-1.4.0.RELEASE.jar:1.4.0.RELEASE]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:313) ~[spring-boot-1.4.0.RELEASE.jar:1.4.0.RELEASE]
-	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:111) ~[spring-boot-test-1.4.0.RELEASE.jar:1.4.0.RELEASE]
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98) ~[spring-test-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116) ~[spring-test-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	... 45 common frames omitted
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [ee.aktors.demo.service.OrderService] found for dependency [ee.aktors.demo.service.OrderService]: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1406) ~[spring-beans-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1057) ~[spring-beans-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1019) ~[spring-beans-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:566) ~[spring-beans-4.3.2.RELEASE.jar:4.3.2.RELEASE]
-	... 63 common frames omitted
-
+2016-08-30 18:18:48.081  INFO 27488 --- [    Test worker] e.a.demo.AktorsDemoApplicationTests      : Starting AktorsDemoApplicationTests on ordi with PID 27488 (started by antos in /home/antos/Documents/code/IdeaProjects/AktorsDemo)
+2016-08-30 18:18:48.082  INFO 27488 --- [    Test worker] e.a.demo.AktorsDemoApplicationTests      : No active profile set, falling back to default profiles: default
+2016-08-30 18:18:48.140  INFO 27488 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@29d56aea: startup date [Tue Aug 30 18:18:48 EEST 2016]; root of context hierarchy
+2016-08-30 18:18:48.141 DEBUG 27488 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Bean factory for org.springframework.web.context.support.GenericWebApplicationContext@29d56aea: org.springframework.beans.factory.support.DefaultListableBeanFactory@72354a69: defining beans [org.springframework.boot.test.mock.mockito.MockitoPostProcessor$SpyPostProcessor,org.springframework.boot.test.mock.mockito.MockitoPostProcessor,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.event.internalEventListenerProcessor,org.springframework.context.event.internalEventListenerFactory,aktorsDemoApplication]; root of factory hierarchy
+2016-08-30 18:18:49.455  INFO 27488 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [class org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$9c22c7ea] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-08-30 18:18:49.497  INFO 27488 --- [    Test worker] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2016-08-30 18:18:49.511  INFO 27488 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$f78b02eb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-08-30 18:18:49.542 DEBUG 27488 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Unable to locate MessageSource with name 'messageSource': using default [org.springframework.context.support.DelegatingMessageSource@632943c4]
+2016-08-30 18:18:49.542 DEBUG 27488 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Unable to locate ApplicationEventMulticaster with name 'applicationEventMulticaster': using default [org.springframework.context.event.SimpleApplicationEventMulticaster@1ccec1ae]
+2016-08-30 18:18:50.595  INFO 27488 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@29d56aea: startup date [Tue Aug 30 18:18:48 EEST 2016]; root of context hierarchy
+2016-08-30 18:18:50.681 DEBUG 27488 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking for request mappings in application context: org.springframework.web.context.support.GenericWebApplicationContext@29d56aea: startup date [Tue Aug 30 18:18:48 EEST 2016]; root of context hierarchy
+2016-08-30 18:18:50.694 DEBUG 27488 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : 6 request handler methods found on class ee.aktors.demo.controller.ClientController: {public org.springframework.http.ResponseEntity ee.aktors.demo.controller.ClientController.updateClient(long,ee.aktors.demo.model.Client)={[/client/{securityNumber}],methods=[PUT]}, public org.springframework.http.ResponseEntity ee.aktors.demo.controller.ClientController.deleteClient(long)={[/client/{securityNumber}],methods=[DELETE]}, public org.springframework.http.ResponseEntity ee.aktors.demo.controller.ClientController.deleteAllClients()={[/client/],methods=[DELETE]}, public org.springframework.http.ResponseEntity ee.aktors.demo.controller.ClientController.getClient(long)={[/client/{securityNumber}],methods=[GET],produces=[application/json]}, public org.springframework.http.ResponseEntity ee.aktors.demo.controller.ClientController.listAllClients()={[/client/],methods=[GET]}, public org.springframework.http.ResponseEntity ee.aktors.demo.controller.ClientController.createClient(ee.aktors.demo.model.Client,org.springframework.web.util.UriComponentsBuilder)={[/client/],methods=[POST]}}
+2016-08-30 18:18:50.695  INFO 27488 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/client/{securityNumber}],methods=[PUT]}&quot; onto public org.springframework.http.ResponseEntity&lt;ee.aktors.demo.model.Client&gt; ee.aktors.demo.controller.ClientController.updateClient(long,ee.aktors.demo.model.Client)
+2016-08-30 18:18:50.697  INFO 27488 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/client/{securityNumber}],methods=[DELETE]}&quot; onto public org.springframework.http.ResponseEntity&lt;ee.aktors.demo.model.Client&gt; ee.aktors.demo.controller.ClientController.deleteClient(long)
+2016-08-30 18:18:50.698  INFO 27488 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/client/],methods=[DELETE]}&quot; onto public org.springframework.http.ResponseEntity&lt;ee.aktors.demo.model.Client&gt; ee.aktors.demo.controller.ClientController.deleteAllClients()
+2016-08-30 18:18:50.698  INFO 27488 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/client/{securityNumber}],methods=[GET],produces=[application/json]}&quot; onto public org.springframework.http.ResponseEntity&lt;ee.aktors.demo.model.Client&gt; ee.aktors.demo.controller.ClientController.getClient(long)
+2016-08-30 18:18:50.699  INFO 27488 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/client/],methods=[GET]}&quot; onto public org.springframework.http.ResponseEntity&lt;java.util.List&lt;ee.aktors.demo.model.Client&gt;&gt; ee.aktors.demo.controller.ClientController.listAllClients()
+2016-08-30 18:18:50.699  INFO 27488 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/client/],methods=[POST]}&quot; onto public org.springframework.http.ResponseEntity&lt;java.lang.Void&gt; ee.aktors.demo.controller.ClientController.createClient(ee.aktors.demo.model.Client,org.springframework.web.util.UriComponentsBuilder)
+2016-08-30 18:18:50.701 DEBUG 27488 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : 6 request handler methods found on class ee.aktors.demo.controller.OrderController: {public org.springframework.http.ResponseEntity ee.aktors.demo.controller.OrderController.getOrder(long)={[/order/{orderNr}],methods=[GET],produces=[application/json]}, public org.springframework.http.ResponseEntity ee.aktors.demo.controller.OrderController.createOrder(ee.aktors.demo.model.Order,org.springframework.web.util.UriComponentsBuilder)={[/order/],methods=[POST]}, public org.springframework.http.ResponseEntity ee.aktors.demo.controller.OrderController.updateOrder(long,ee.aktors.demo.model.Order)={[/order/{orderNr}],methods=[PUT]}, public org.springframework.http.ResponseEntity ee.aktors.demo.controller.OrderController.deleteOrder(long)={[/order/{orderNr}],methods=[DELETE]}, public org.springframework.http.ResponseEntity ee.aktors.demo.controller.OrderController.deleteAllOrders()={[/order/],methods=[DELETE]}, public org.springframework.http.ResponseEntity ee.aktors.demo.controller.OrderController.listAllOrders()={[/order/],methods=[GET]}}
+2016-08-30 18:18:50.701  INFO 27488 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/order/{orderNr}],methods=[GET],produces=[application/json]}&quot; onto public org.springframework.http.ResponseEntity&lt;ee.aktors.demo.model.Order&gt; ee.aktors.demo.controller.OrderController.getOrder(long)
+2016-08-30 18:18:50.702  INFO 27488 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/order/],methods=[POST]}&quot; onto public org.springframework.http.ResponseEntity&lt;java.lang.Void&gt; ee.aktors.demo.controller.OrderController.createOrder(ee.aktors.demo.model.Order,org.springframework.web.util.UriComponentsBuilder)
+2016-08-30 18:18:50.702  INFO 27488 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/order/{orderNr}],methods=[PUT]}&quot; onto public org.springframework.http.ResponseEntity&lt;ee.aktors.demo.model.Order&gt; ee.aktors.demo.controller.OrderController.updateOrder(long,ee.aktors.demo.model.Order)
+2016-08-30 18:18:50.703  INFO 27488 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/order/{orderNr}],methods=[DELETE]}&quot; onto public org.springframework.http.ResponseEntity&lt;ee.aktors.demo.model.Order&gt; ee.aktors.demo.controller.OrderController.deleteOrder(long)
+2016-08-30 18:18:50.703  INFO 27488 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/order/],methods=[DELETE]}&quot; onto public org.springframework.http.ResponseEntity&lt;ee.aktors.demo.model.Order&gt; ee.aktors.demo.controller.OrderController.deleteAllOrders()
+2016-08-30 18:18:50.703  INFO 27488 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/order/],methods=[GET]}&quot; onto public org.springframework.http.ResponseEntity&lt;java.util.List&lt;ee.aktors.demo.model.Order&gt;&gt; ee.aktors.demo.controller.OrderController.listAllOrders()
+2016-08-30 18:18:50.708 DEBUG 27488 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : 6 request handler methods found on class ee.aktors.demo.controller.ProductController: {public org.springframework.http.ResponseEntity ee.aktors.demo.controller.ProductController.getProduct(long)={[/product/{barcode}],methods=[GET],produces=[application/json]}, public org.springframework.http.ResponseEntity ee.aktors.demo.controller.ProductController.listAllProducts()={[/product/],methods=[GET]}, public org.springframework.http.ResponseEntity ee.aktors.demo.controller.ProductController.createProduct(ee.aktors.demo.model.Product,org.springframework.web.util.UriComponentsBuilder)={[/product/],methods=[POST]}, public org.springframework.http.ResponseEntity ee.aktors.demo.controller.ProductController.updateProduct(long,ee.aktors.demo.model.Product)={[/product/{barcode}],methods=[PUT]}, public org.springframework.http.ResponseEntity ee.aktors.demo.controller.ProductController.deleteProduct(long)={[/product/{barcode}],methods=[DELETE]}, public org.springframework.http.ResponseEntity ee.aktors.demo.controller.ProductController.deleteAllProducts()={[/product/],methods=[DELETE]}}
+2016-08-30 18:18:50.709  INFO 27488 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/product/{barcode}],methods=[GET],produces=[application/json]}&quot; onto public org.springframework.http.ResponseEntity&lt;ee.aktors.demo.model.Product&gt; ee.aktors.demo.controller.ProductController.getProduct(long)
+2016-08-30 18:18:50.709  INFO 27488 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/product/],methods=[GET]}&quot; onto public org.springframework.http.ResponseEntity&lt;java.util.List&lt;ee.aktors.demo.model.Product&gt;&gt; ee.aktors.demo.controller.ProductController.listAllProducts()
+2016-08-30 18:18:50.710  INFO 27488 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/product/],methods=[POST]}&quot; onto public org.springframework.http.ResponseEntity&lt;java.lang.Void&gt; ee.aktors.demo.controller.ProductController.createProduct(ee.aktors.demo.model.Product,org.springframework.web.util.UriComponentsBuilder)
+2016-08-30 18:18:50.710  INFO 27488 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/product/{barcode}],methods=[PUT]}&quot; onto public org.springframework.http.ResponseEntity&lt;ee.aktors.demo.model.Product&gt; ee.aktors.demo.controller.ProductController.updateProduct(long,ee.aktors.demo.model.Product)
+2016-08-30 18:18:50.711  INFO 27488 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/product/{barcode}],methods=[DELETE]}&quot; onto public org.springframework.http.ResponseEntity&lt;ee.aktors.demo.model.Product&gt; ee.aktors.demo.controller.ProductController.deleteProduct(long)
+2016-08-30 18:18:50.711  INFO 27488 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/product/],methods=[DELETE]}&quot; onto public org.springframework.http.ResponseEntity&lt;ee.aktors.demo.model.Product&gt; ee.aktors.demo.controller.ProductController.deleteAllProducts()
+2016-08-30 18:18:50.714 DEBUG 27488 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 request handler methods found on class org.springframework.boot.autoconfigure.web.BasicErrorController: {public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)={[/error],produces=[text/html]}, public org.springframework.http.ResponseEntity org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)={[/error]}}
+2016-08-30 18:18:50.714  INFO 27488 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/error],produces=[text/html]}&quot; onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2016-08-30 18:18:50.715  INFO 27488 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/error]}&quot; onto public org.springframework.http.ResponseEntity&lt;java.util.Map&lt;java.lang.String, java.lang.Object&gt;&gt; org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2016-08-30 18:18:50.721  INFO 27488 --- [    Test worker] o.s.w.s.c.a.WebMvcConfigurerAdapter      : Adding welcome page: ServletContext resource [/index.html]
+2016-08-30 18:18:50.739  INFO 27488 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Root mapping to handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2016-08-30 18:18:50.750 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Looking for URL mappings in application context: org.springframework.web.context.support.GenericWebApplicationContext@29d56aea: startup date [Tue Aug 30 18:18:48 EEST 2016]; root of context hierarchy
+2016-08-30 18:18:50.751 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.test.mock.mockito.MockitoPostProcessor$SpyPostProcessor': no URL paths identified
+2016-08-30 18:18:50.751 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.test.mock.mockito.MockitoPostProcessor': no URL paths identified
+2016-08-30 18:18:50.751 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor': no URL paths identified
+2016-08-30 18:18:50.751 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor': no URL paths identified
+2016-08-30 18:18:50.751 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.context.annotation.internalRequiredAnnotationProcessor': no URL paths identified
+2016-08-30 18:18:50.752 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.context.annotation.internalCommonAnnotationProcessor': no URL paths identified
+2016-08-30 18:18:50.752 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.context.event.internalEventListenerProcessor': no URL paths identified
+2016-08-30 18:18:50.752 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.context.event.internalEventListenerFactory': no URL paths identified
+2016-08-30 18:18:50.753 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'aktorsDemoApplication': no URL paths identified
+2016-08-30 18:18:50.753 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory': no URL paths identified
+2016-08-30 18:18:50.753 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor': no URL paths identified
+2016-08-30 18:18:50.753 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.context.annotation.ConfigurationClassPostProcessor.enhancedConfigurationProcessor': no URL paths identified
+2016-08-30 18:18:50.753 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'clientController': no URL paths identified
+2016-08-30 18:18:50.753 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'orderController': no URL paths identified
+2016-08-30 18:18:50.753 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'productController': no URL paths identified
+2016-08-30 18:18:50.754 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'clientService': no URL paths identified
+2016-08-30 18:18:50.754 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'orderService': no URL paths identified
+2016-08-30 18:18:50.754 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'productService': no URL paths identified
+2016-08-30 18:18:50.754 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.AutoConfigurationPackages': no URL paths identified
+2016-08-30 18:18:50.754 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.PropertyPlaceholderAutoConfiguration': no URL paths identified
+2016-08-30 18:18:50.754 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry': no URL paths identified
+2016-08-30 18:18:50.755 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'propertySourcesPlaceholderConfigurer': no URL paths identified
+2016-08-30 18:18:50.755 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$Jackson2ObjectMapperBuilderCustomizerConfiguration': no URL paths identified
+2016-08-30 18:18:50.755 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'standardJacksonObjectMapperBuilderCustomizer': no URL paths identified
+2016-08-30 18:18:50.755 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.jackson-org.springframework.boot.autoconfigure.jackson.JacksonProperties': no URL paths identified
+2016-08-30 18:18:50.755 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor': no URL paths identified
+2016-08-30 18:18:50.755 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor.store': no URL paths identified
+2016-08-30 18:18:50.755 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperBuilderConfiguration': no URL paths identified
+2016-08-30 18:18:50.756 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'jacksonObjectMapperBuilder': no URL paths identified
+2016-08-30 18:18:50.756 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperConfiguration': no URL paths identified
+2016-08-30 18:18:50.756 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'jacksonObjectMapper': no URL paths identified
+2016-08-30 18:18:50.756 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration': no URL paths identified
+2016-08-30 18:18:50.756 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'jsonComponentModule': no URL paths identified
+2016-08-30 18:18:50.756 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.websocket.WebSocketAutoConfiguration$JettyWebSocketConfiguration': no URL paths identified
+2016-08-30 18:18:50.756 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'websocketContainerCustomizer': no URL paths identified
+2016-08-30 18:18:50.757 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.websocket.WebSocketAutoConfiguration': no URL paths identified
+2016-08-30 18:18:50.757 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.EmbeddedServletContainerAutoConfiguration$EmbeddedJetty': no URL paths identified
+2016-08-30 18:18:50.757 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'jettyEmbeddedServletContainerFactory': no URL paths identified
+2016-08-30 18:18:50.757 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.EmbeddedServletContainerAutoConfiguration': no URL paths identified
+2016-08-30 18:18:50.757 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'embeddedServletContainerCustomizerBeanPostProcessor': no URL paths identified
+2016-08-30 18:18:50.757 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'errorPageRegistrarBeanPostProcessor': no URL paths identified
+2016-08-30 18:18:50.757 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.DispatcherServletAutoConfiguration$DispatcherServletConfiguration': no URL paths identified
+2016-08-30 18:18:50.757 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'dispatcherServlet': no URL paths identified
+2016-08-30 18:18:50.758 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.mvc-org.springframework.boot.autoconfigure.web.WebMvcProperties': no URL paths identified
+2016-08-30 18:18:50.758 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.DispatcherServletAutoConfiguration$DispatcherServletRegistrationConfiguration': no URL paths identified
+2016-08-30 18:18:50.758 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'dispatcherServletRegistration': no URL paths identified
+2016-08-30 18:18:50.758 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.DispatcherServletAutoConfiguration': no URL paths identified
+2016-08-30 18:18:50.758 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration': no URL paths identified
+2016-08-30 18:18:50.758 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'error': no URL paths identified
+2016-08-30 18:18:50.759 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'beanNameViewResolver': no URL paths identified
+2016-08-30 18:18:50.759 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration': no URL paths identified
+2016-08-30 18:18:50.759 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'errorAttributes': no URL paths identified
+2016-08-30 18:18:50.759 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'basicErrorController': no URL paths identified
+2016-08-30 18:18:50.759 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'errorPageCustomizer': no URL paths identified
+2016-08-30 18:18:50.759 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'conventionErrorViewResolver': no URL paths identified
+2016-08-30 18:18:50.759 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'preserveErrorControllerTargetClassPostProcessor': no URL paths identified
+2016-08-30 18:18:50.759 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.resources-org.springframework.boot.autoconfigure.web.ResourceProperties': no URL paths identified
+2016-08-30 18:18:50.759 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$EnableWebMvcConfiguration': no URL paths identified
+2016-08-30 18:18:50.760 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'requestMappingHandlerAdapter': no URL paths identified
+2016-08-30 18:18:50.760 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'requestMappingHandlerMapping': no URL paths identified
+2016-08-30 18:18:50.760 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mvcContentNegotiationManager': no URL paths identified
+2016-08-30 18:18:50.760 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'viewControllerHandlerMapping': no URL paths identified
+2016-08-30 18:18:50.760 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'beanNameHandlerMapping': no URL paths identified
+2016-08-30 18:18:50.760 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'resourceHandlerMapping': no URL paths identified
+2016-08-30 18:18:50.760 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mvcResourceUrlProvider': no URL paths identified
+2016-08-30 18:18:50.760 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'defaultServletHandlerMapping': no URL paths identified
+2016-08-30 18:18:50.760 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mvcConversionService': no URL paths identified
+2016-08-30 18:18:50.761 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mvcValidator': no URL paths identified
+2016-08-30 18:18:50.761 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mvcPathMatcher': no URL paths identified
+2016-08-30 18:18:50.761 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mvcUrlPathHelper': no URL paths identified
+2016-08-30 18:18:50.761 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mvcUriComponentsContributor': no URL paths identified
+2016-08-30 18:18:50.761 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'httpRequestHandlerAdapter': no URL paths identified
+2016-08-30 18:18:50.761 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'simpleControllerHandlerAdapter': no URL paths identified
+2016-08-30 18:18:50.761 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'handlerExceptionResolver': no URL paths identified
+2016-08-30 18:18:50.761 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mvcViewResolver': no URL paths identified
+2016-08-30 18:18:50.761 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter$FaviconConfiguration': no URL paths identified
+2016-08-30 18:18:50.761 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'faviconHandlerMapping': no URL paths identified
+2016-08-30 18:18:50.762 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'faviconRequestHandler': no URL paths identified
+2016-08-30 18:18:50.762 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter': no URL paths identified
+2016-08-30 18:18:50.762 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'defaultViewResolver': no URL paths identified
+2016-08-30 18:18:50.762 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'viewResolver': no URL paths identified
+2016-08-30 18:18:50.762 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'requestContextFilter': no URL paths identified
+2016-08-30 18:18:50.762 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration': no URL paths identified
+2016-08-30 18:18:50.762 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'hiddenHttpMethodFilter': no URL paths identified
+2016-08-30 18:18:50.762 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'httpPutFormContentFilter': no URL paths identified
+2016-08-30 18:18:50.762 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Tomcat': no URL paths identified
+2016-08-30 18:18:50.763 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'dataSource': no URL paths identified
+2016-08-30 18:18:50.763 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration$PooledDataSourceConfiguration': no URL paths identified
+2016-08-30 18:18:50.763 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration$TomcatDataSourcePoolMetadataProviderConfiguration': no URL paths identified
+2016-08-30 18:18:50.763 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'tomcatPoolDataSourceMetadataProvider': no URL paths identified
+2016-08-30 18:18:50.763 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration': no URL paths identified
+2016-08-30 18:18:50.763 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration': no URL paths identified
+2016-08-30 18:18:50.763 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'dataSourceInitializer': no URL paths identified
+2016-08-30 18:18:50.763 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties': no URL paths identified
+2016-08-30 18:18:50.763 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'dataSourceInitializerPostProcessor': no URL paths identified
+2016-08-30 18:18:50.764 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.context.ConfigurationPropertiesAutoConfiguration': no URL paths identified
+2016-08-30 18:18:50.764 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.dao.PersistenceExceptionTranslationAutoConfiguration': no URL paths identified
+2016-08-30 18:18:50.764 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'persistenceExceptionTranslationPostProcessor': no URL paths identified
+2016-08-30 18:18:50.764 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.gson.GsonAutoConfiguration': no URL paths identified
+2016-08-30 18:18:50.764 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'gson': no URL paths identified
+2016-08-30 18:18:50.764 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.HttpMessageConvertersAutoConfiguration$StringHttpMessageConverterConfiguration': no URL paths identified
+2016-08-30 18:18:50.764 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'stringHttpMessageConverter': no URL paths identified
+2016-08-30 18:18:50.764 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.http.encoding-org.springframework.boot.autoconfigure.web.HttpEncodingProperties': no URL paths identified
+2016-08-30 18:18:50.764 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.JacksonHttpMessageConvertersConfiguration$MappingJackson2HttpMessageConverterConfiguration': no URL paths identified
+2016-08-30 18:18:50.765 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mappingJackson2HttpMessageConverter': no URL paths identified
+2016-08-30 18:18:50.765 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.JacksonHttpMessageConvertersConfiguration': no URL paths identified
+2016-08-30 18:18:50.765 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.GsonHttpMessageConvertersConfiguration': no URL paths identified
+2016-08-30 18:18:50.765 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.HttpMessageConvertersAutoConfiguration': no URL paths identified
+2016-08-30 18:18:50.765 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'messageConverters': no URL paths identified
+2016-08-30 18:18:50.765 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.info.ProjectInfoAutoConfiguration': no URL paths identified
+2016-08-30 18:18:50.765 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.info-org.springframework.boot.autoconfigure.info.ProjectInfoProperties': no URL paths identified
+2016-08-30 18:18:50.765 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': no URL paths identified
+2016-08-30 18:18:50.765 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.transaction.config.internalTransactionAdvisor': no URL paths identified
+2016-08-30 18:18:50.766 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'transactionAttributeSource': no URL paths identified
+2016-08-30 18:18:50.766 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'transactionInterceptor': no URL paths identified
+2016-08-30 18:18:50.766 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.transaction.config.internalTransactionalEventListenerFactory': no URL paths identified
+2016-08-30 18:18:50.766 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration$TransactionManagementConfiguration': no URL paths identified
+2016-08-30 18:18:50.766 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.aop.config.internalAutoProxyCreator': no URL paths identified
+2016-08-30 18:18:50.766 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration$DataSourceTransactionManagerConfiguration': no URL paths identified
+2016-08-30 18:18:50.766 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'transactionManager': no URL paths identified
+2016-08-30 18:18:50.766 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration': no URL paths identified
+2016-08-30 18:18:50.766 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration': no URL paths identified
+2016-08-30 18:18:50.766 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'jdbcTemplate': no URL paths identified
+2016-08-30 18:18:50.767 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'namedParameterJdbcTemplate': no URL paths identified
+2016-08-30 18:18:50.767 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration': no URL paths identified
+2016-08-30 18:18:50.767 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'transactionTemplate': no URL paths identified
+2016-08-30 18:18:50.767 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.HttpEncodingAutoConfiguration': no URL paths identified
+2016-08-30 18:18:50.767 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'characterEncodingFilter': no URL paths identified
+2016-08-30 18:18:50.767 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'localeCharsetMappingsCustomizer': no URL paths identified
+2016-08-30 18:18:50.767 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.MultipartAutoConfiguration': no URL paths identified
+2016-08-30 18:18:50.767 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'multipartConfigElement': no URL paths identified
+2016-08-30 18:18:50.767 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'multipartResolver': no URL paths identified
+2016-08-30 18:18:50.767 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.http.multipart-org.springframework.boot.autoconfigure.web.MultipartProperties': no URL paths identified
+2016-08-30 18:18:50.768 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.ServerPropertiesAutoConfiguration': no URL paths identified
+2016-08-30 18:18:50.768 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'serverProperties': no URL paths identified
+2016-08-30 18:18:50.768 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'duplicateServerPropertiesDetector': no URL paths identified
+2016-08-30 18:18:50.768 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.WebClientAutoConfiguration$RestTemplateConfiguration': no URL paths identified
+2016-08-30 18:18:50.768 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'restTemplateBuilder': no URL paths identified
+2016-08-30 18:18:50.768 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.WebClientAutoConfiguration': no URL paths identified
+2016-08-30 18:18:50.768 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.ws.config.annotation.DelegatingWsConfiguration': no URL paths identified
+2016-08-30 18:18:50.768 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'payloadRootAnnotationMethodEndpointMapping': no URL paths identified
+2016-08-30 18:18:50.768 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'soapActionAnnotationMethodEndpointMapping': no URL paths identified
+2016-08-30 18:18:50.768 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'annotationActionEndpointMapping': no URL paths identified
+2016-08-30 18:18:50.769 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'defaultMethodEndpointAdapter': no URL paths identified
+2016-08-30 18:18:50.769 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'soapFaultAnnotationExceptionResolver': no URL paths identified
+2016-08-30 18:18:50.769 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'simpleSoapExceptionResolver': no URL paths identified
+2016-08-30 18:18:50.769 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.webservices.WebServicesAutoConfiguration$WsConfiguration': no URL paths identified
+2016-08-30 18:18:50.769 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.webservices.WebServicesAutoConfiguration': no URL paths identified
+2016-08-30 18:18:50.769 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'messageDispatcherServlet': no URL paths identified
+2016-08-30 18:18:50.769 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.webservices-org.springframework.boot.autoconfigure.webservices.WebServicesProperties': no URL paths identified
+2016-08-30 18:18:50.769 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.websocket.WebSocketMessagingAutoConfiguration$WebSocketMessageConverterConfiguration': no URL paths identified
+2016-08-30 18:18:50.769 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.websocket.WebSocketMessagingAutoConfiguration': no URL paths identified
+2016-08-30 18:18:50.770 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.test.context.filter.TestTypeExcludeFilter': no URL paths identified
+2016-08-30 18:18:50.770 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer$PropertyMappingCheckBeanPostProcessor': no URL paths identified
+2016-08-30 18:18:50.770 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'autoConfigurationReport': no URL paths identified
+2016-08-30 18:18:50.770 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'springApplicationArguments': no URL paths identified
+2016-08-30 18:18:50.770 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'springBootBanner': no URL paths identified
+2016-08-30 18:18:50.770 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'springBootLoggingSystem': no URL paths identified
+2016-08-30 18:18:50.770 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'environment': no URL paths identified
+2016-08-30 18:18:50.770 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'systemProperties': no URL paths identified
+2016-08-30 18:18:50.770 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'systemEnvironment': no URL paths identified
+2016-08-30 18:18:50.770 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'servletContext': no URL paths identified
+2016-08-30 18:18:50.771 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'contextParameters': no URL paths identified
+2016-08-30 18:18:50.771 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'contextAttributes': no URL paths identified
+2016-08-30 18:18:50.771 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importRegistry': no URL paths identified
+2016-08-30 18:18:50.771 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'messageSource': no URL paths identified
+2016-08-30 18:18:50.771 DEBUG 27488 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'applicationEventMulticaster': no URL paths identified
+2016-08-30 18:18:50.778  INFO 27488 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-08-30 18:18:50.779  INFO 27488 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-08-30 18:18:50.810 DEBUG 27488 --- [    Test worker] .m.m.a.ExceptionHandlerExceptionResolver : Looking for exception mappings: org.springframework.web.context.support.GenericWebApplicationContext@29d56aea: startup date [Tue Aug 30 18:18:48 EEST 2016]; root of context hierarchy
+2016-08-30 18:18:50.844  INFO 27488 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-08-30 18:18:50.874 DEBUG 27488 --- [    Test worker] o.s.w.c.s.StandardServletEnvironment     : Adding [servletConfigInitParams] PropertySource with lowest search precedence
+2016-08-30 18:18:50.874 DEBUG 27488 --- [    Test worker] o.s.w.c.s.StandardServletEnvironment     : Adding [servletContextInitParams] PropertySource with lowest search precedence
+2016-08-30 18:18:50.878 DEBUG 27488 --- [    Test worker] o.s.w.c.s.StandardServletEnvironment     : Adding [systemProperties] PropertySource with lowest search precedence
+2016-08-30 18:18:50.878 DEBUG 27488 --- [    Test worker] o.s.w.c.s.StandardServletEnvironment     : Adding [systemEnvironment] PropertySource with lowest search precedence
+2016-08-30 18:18:50.878 DEBUG 27488 --- [    Test worker] o.s.w.c.s.StandardServletEnvironment     : Initialized StandardServletEnvironment with PropertySources [servletConfigInitParams,servletContextInitParams,systemProperties,systemEnvironment]
+2016-08-30 18:18:50.894 DEBUG 27488 --- [    Test worker] o.s.w.c.s.StandardServletEnvironment     : Adding [servletConfigInitParams] PropertySource with lowest search precedence
+2016-08-30 18:18:50.895 DEBUG 27488 --- [    Test worker] o.s.w.c.s.StandardServletEnvironment     : Adding [servletContextInitParams] PropertySource with lowest search precedence
+2016-08-30 18:18:50.895 DEBUG 27488 --- [    Test worker] o.s.w.c.s.StandardServletEnvironment     : Adding [systemProperties] PropertySource with lowest search precedence
+2016-08-30 18:18:50.895 DEBUG 27488 --- [    Test worker] o.s.w.c.s.StandardServletEnvironment     : Adding [systemEnvironment] PropertySource with lowest search precedence
+2016-08-30 18:18:50.895 DEBUG 27488 --- [    Test worker] o.s.w.c.s.StandardServletEnvironment     : Initialized StandardServletEnvironment with PropertySources [servletConfigInitParams,servletContextInitParams,systemProperties,systemEnvironment]
+2016-08-30 18:18:50.903 DEBUG 27488 --- [    Test worker] o.s.w.c.s.StandardServletEnvironment     : Adding [servletConfigInitParams] PropertySource with lowest search precedence
+2016-08-30 18:18:50.904 DEBUG 27488 --- [    Test worker] o.s.w.c.s.StandardServletEnvironment     : Adding [servletContextInitParams] PropertySource with lowest search precedence
+2016-08-30 18:18:50.904 DEBUG 27488 --- [    Test worker] o.s.w.c.s.StandardServletEnvironment     : Adding [systemProperties] PropertySource with lowest search precedence
+2016-08-30 18:18:50.904 DEBUG 27488 --- [    Test worker] o.s.w.c.s.StandardServletEnvironment     : Adding [systemEnvironment] PropertySource with lowest search precedence
+2016-08-30 18:18:50.904 DEBUG 27488 --- [    Test worker] o.s.w.c.s.StandardServletEnvironment     : Initialized StandardServletEnvironment with PropertySources [servletConfigInitParams,servletContextInitParams,systemProperties,systemEnvironment]
+2016-08-30 18:18:51.244 DEBUG 27488 --- [    Test worker] o.s.w.c.s.StandardServletEnvironment     : Adding [servletConfigInitParams] PropertySource with lowest search precedence
+2016-08-30 18:18:51.244 DEBUG 27488 --- [    Test worker] o.s.w.c.s.StandardServletEnvironment     : Adding [servletContextInitParams] PropertySource with lowest search precedence
+2016-08-30 18:18:51.245 DEBUG 27488 --- [    Test worker] o.s.w.c.s.StandardServletEnvironment     : Adding [systemProperties] PropertySource with lowest search precedence
+2016-08-30 18:18:51.245 DEBUG 27488 --- [    Test worker] o.s.w.c.s.StandardServletEnvironment     : Adding [systemEnvironment] PropertySource with lowest search precedence
+2016-08-30 18:18:51.245 DEBUG 27488 --- [    Test worker] o.s.w.c.s.StandardServletEnvironment     : Initialized StandardServletEnvironment with PropertySources [servletConfigInitParams,servletContextInitParams,systemProperties,systemEnvironment]
+2016-08-30 18:18:51.481 DEBUG 27488 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Unable to locate LifecycleProcessor with name 'lifecycleProcessor': using default [org.springframework.context.support.DefaultLifecycleProcessor@7f29532d]
+2016-08-30 18:18:51.495 DEBUG 27488 --- [    Test worker] o.s.w.s.resource.ResourceUrlProvider     : Looking for resource handler mappings
+2016-08-30 18:18:51.497 DEBUG 27488 --- [    Test worker] o.s.w.s.resource.ResourceUrlProvider     : Found resource handler mapping: URL pattern=&quot;/**/favicon.ico&quot;, locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/], class path resource []], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@202bb1b]
+2016-08-30 18:18:51.497 DEBUG 27488 --- [    Test worker] o.s.w.s.resource.ResourceUrlProvider     : Found resource handler mapping: URL pattern=&quot;/webjars/**&quot;, locations=[class path resource [META-INF/resources/webjars/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@1adc07a3]
+2016-08-30 18:18:51.497 DEBUG 27488 --- [    Test worker] o.s.w.s.resource.ResourceUrlProvider     : Found resource handler mapping: URL pattern=&quot;/**&quot;, locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@73959b6e]
+2016-08-30 18:18:51.506  INFO 27488 --- [    Test worker] e.a.demo.AktorsDemoApplicationTests      : Started AktorsDemoApplicationTests in 4.023 seconds (JVM running for 4.927)
 </pre>
 </span>
 </div>
@@ -396,7 +378,7 @@ Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No q
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 2.14.1</a> at Aug 29, 2016 4:21:12 PM</p>
+<a href="http://www.gradle.org">Gradle 2.14.1</a> at Aug 30, 2016 6:18:51 PM</p>
 </div>
 </div>
 </body>
