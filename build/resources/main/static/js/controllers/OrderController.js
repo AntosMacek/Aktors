@@ -1,4 +1,15 @@
 angular.module('AktorsatorApp').controller('OrderController', ['$scope', 'OrderService', function ($scope, OrderService) {
+
+    //sorting stuff
+    $scope.sortByDate     = "['transactionDate', 'product', 'client']"; // set the default sort type
+    $scope.sortByNumber   = 'orderNr'; // set the default sort type
+    // $scope.sortReverse  = false;  // set the default sort order
+    // $scope.searchFish   = '';     // set the default search/filter term
+
+    $scope.setOrder = function (order) {
+        $scope.order = order;
+    };
+
     var self = this;
     self.order = {orderNr: null, client: '', product: '', convertedPrice: '', transactionDate: ''};
     self.orders = [];

@@ -1,7 +1,8 @@
-package ee.aktors.demo.service;
+package ee.aktors.demo.service.impl;
 
 
 import ee.aktors.demo.model.Product;
+import ee.aktors.demo.service.ProductService;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -44,6 +45,7 @@ public class ProductServiceImpl implements ProductService {
 
     public void saveProduct(Product product) {
         product.setBarcode(counter.incrementAndGet());
+        product.setReleaseDate(System.currentTimeMillis());
         String representer = product.getName();
         productsRepresents.add(representer);
         productRepresentationMap.put(representer, product);
@@ -89,9 +91,12 @@ public class ProductServiceImpl implements ProductService {
 //        Product p1 = new Product(counter.incrementAndGet(), "Sam", 12.59f, "slave", "15/12/2015");
 //        Product p2 = new Product(counter.incrementAndGet(), "Tomygucci", 5.5f, "toy", "31.12.1999");
 //        Product p3 = new Product(counter.incrementAndGet(), "Car", 16.7f, "model", "05-05-2005");
-        Product p1 = new Product(counter.incrementAndGet(), "Sam", 12.59f, "slave", System.currentTimeMillis());
-        Product p2 = new Product(counter.incrementAndGet(), "Tomygucci", 5.5f, "toy", System.currentTimeMillis());
-        Product p3 = new Product(counter.incrementAndGet(), "Car", 16.7f, "model", System.currentTimeMillis());
+        Product p1 = new Product(counter.incrementAndGet(), "Sam", 12.59f, "slave"/*, System.currentTimeMillis()*/);
+        Product p2 = new Product(counter.incrementAndGet(), "Tomygucci", 5.5f, "toy"/*, System.currentTimeMillis()*/);
+        Product p3 = new Product(counter.incrementAndGet(), "Car", 16.7f, "model"/*, System.currentTimeMillis()*/);
+        p1.setReleaseDate(System.currentTimeMillis()-99999999999L);
+        p1.setReleaseDate(System.currentTimeMillis());
+        p1.setReleaseDate(System.currentTimeMillis()-88888888888L);
         products.add(p1);
         products.add(p2);
         products.add(p3);

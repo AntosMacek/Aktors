@@ -1,7 +1,8 @@
-package ee.aktors.demo.service;
+package ee.aktors.demo.service.impl;
 
 import ee.aktors.demo.model.Client;
 import ee.aktors.demo.model.Country;
+import ee.aktors.demo.service.ClientService;
 import org.springframework.stereotype.Service;
 
 import java.util.*;

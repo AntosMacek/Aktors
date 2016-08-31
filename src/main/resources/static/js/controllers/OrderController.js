@@ -1,4 +1,9 @@
 angular.module('AktorsatorApp').controller('OrderController', ['$scope', 'OrderService', function ($scope, OrderService) {
+
+    $scope.setOrder = function (order) {
+        $scope.order = order;
+    };
+
     var self = this;
     self.order = {orderNr: null, client: '', product: '', convertedPrice: '', transactionDate: ''};
     self.orders = [];

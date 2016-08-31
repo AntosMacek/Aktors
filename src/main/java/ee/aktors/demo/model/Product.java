@@ -14,12 +14,12 @@ public class Product {
     public Product() {
     }
 
-    public Product(long barcode, String name, float basePrice, String description, long releaseDate) {
+    public Product(long barcode, String name, float basePrice, String description/*, long releaseDate*/) {
         this.barcode = barcode;
         this.name = name;
         this.basePrice = basePrice;
         this.description = description;
-        this.releaseDate = releaseDate;
+//        this.releaseDate = releaseDate;
     }
 
     public long getBarcode() {

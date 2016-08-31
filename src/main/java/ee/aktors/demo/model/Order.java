@@ -8,17 +8,17 @@ public class Order {
     private String client;
     private String product;
     private float convertedPrice;
-    private String transactionDate;
+    private long transactionDate;
 
     public Order() {
     }
 
-    public Order(long orderNr, String client, String product, float convertedPrice, String transactionDate) {
+    public Order(long orderNr, String client, String product/*, float convertedPrice, long transactionDate*/) {
         this.orderNr = orderNr;
         this.client = client;
         this.product = product;
-        this.convertedPrice = convertedPrice;
-        this.transactionDate = transactionDate;
+//        this.convertedPrice = convertedPrice;
+//        this.transactionDate = transactionDate;
     }
 
     public long getOrderNr() {
@@ -53,11 +53,11 @@ public class Order {
         this.convertedPrice = convertedPrice;
     }
 
-    public String getTransactionDate() {
+    public long getTransactionDate() {
         return transactionDate;
     }
 
-    public void setTransactionDate(String transactionDate) {
+    public void setTransactionDate(long transactionDate) {
         this.transactionDate = transactionDate;
     }
 }
