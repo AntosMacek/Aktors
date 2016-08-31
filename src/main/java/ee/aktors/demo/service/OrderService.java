@@ -10,14 +10,10 @@ public interface OrderService {
 
     void saveOrder(Order order);
 
-//    void updateOrder(Order order);
-
     void deleteOrderByNumber(long number);
 
     List<Order> findAllOrders();
 
-    void deleteAllOrders();
-
-    public boolean isOrderExist(Order order);
+    boolean isOrderExist(Order order);
 
 }

@@ -24,72 +24,63 @@
                 <div class="clients">
                     <h2>Clients</h2>
 
-                    <div class="generic-container" ng-controller="ClientController as client_ctrl">
+                    <div ng-controller="ClientController as client_ctrl">
 
-                        <form ng-submit="client_ctrl.submit()" name="clientForm" class="form-horizontal">
+                        <form ng-submit="client_ctrl.submit()" name="clientForm">
 
                             <input type="hidden" ng-model="ctrl.client.securityNumber"/>
                             <div class="row">
-                                <div class="form-group col-md-12">
-                                    <div class="col-md-7">
-                                        <input type="text" ng-model="client_ctrl.client.firstName" id="fname"
-                                               class="clientFirstName form-control input-sm" placeholder="First name" required/>
+                                <div>
+                                    <div>
+                                        <input type="text" ng-model="client_ctrl.client.firstName" id="fname" placeholder="First name" required/>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="row">
-                                <div class="form-group col-md-12">
-                                    <div class="col-md-7">
-                                        <input type="text" ng-model="client_ctrl.client.lastName" id="lname"
-                                               class="clientLastName form-control input-sm" placeholder="Last name" required/>
+                                <div>
+                                    <div>
+                                        <input type="text" ng-model="client_ctrl.client.lastName" id="lname" placeholder="Last name" required/>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="row">
-                                <div class="form-group col-md-12">
-                                    <div class="col-md-7">
-                                        <input type="text" ng-model="client_ctrl.client.phoneNumber" id="phnumber"
-                                               class="clientPhoneNumber form-control input-sm" placeholder="Phone number"
+                                <div>
+                                    <div>
+                                        <input type="text" ng-model="client_ctrl.client.phoneNumber" id="phnumber" placeholder="Phone number"
                                                required ng-minlength="3"/>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="row">
-                                <div class="form-group col-md-12">
-                                    <div class="col-md-7">
-                                        <input type="text" ng-model="client_ctrl.client.country" id="country"
-                                               class="country form-control input-sm" placeholder="Country" required/>
+                                <div>
+                                    <div>
+                                        <input type="text" ng-model="client_ctrl.client.country" id="country" placeholder="Country" required/>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="row">
-                                <div class="form-group col-md-12">
-                                    <div class="col-md-7">
-                                        <input type="text" ng-model="client_ctrl.client.address" id="address"
-                                               class="form-control input-sm"
-                                               placeholder="Address"/>
+                                <div>
+                                    <div>
+                                        <input type="text" ng-model="client_ctrl.client.address" id="address" placeholder="Address"/>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="row">
-                                <div class="form-actions floatRight">
-                                    <input type="submit" value="{{!client_ctrl.client.securityNumber ? 'Add' : 'Update'}}"
-                                           class="btn btn-primary btn-sm" ng-disabled="clientForm.$invalid">
-                                    <button type="button" ng-click="client_ctrl.reset()" class="btn btn-warning btn-sm"
-                                            ng-disabled="clientForm.$pristine">Reset Form
-                                    </button>
+                                <div>
+                                    <input type="submit" value="{{!client_ctrl.client.securityNumber ? 'Add' : 'Update'}}"  ng-disabled="clientForm.$invalid">
+                                    <button type="button" ng-click="client_ctrl.reset()" ng-disabled="clientForm.$pristine">Reset Form</button>
                                 </div>
                             </div>
 
                         </form>
 
-                        <div class="panel panel-default">
-                            <table class="table table-hover">
+                        <div>
+                            <table>
                                 <thead>
                                 <tr>
                                     <th>Security number</th>
@@ -110,12 +101,10 @@
                                     <td><span ng-bind="c.country"></span></td>
                                     <td><span ng-bind="c.address"></span></td>
                                     <td>
-                                        <button type="button" ng-click="client_ctrl.edit(c.securityNumber)"
-                                                class="btn btn-success custom-width">
+                                        <button type="button" ng-click="client_ctrl.edit(c.securityNumber)">
                                             Edit
                                         </button>
-                                        <button type="button" ng-click="client_ctrl.remove(c.securityNumber)"
-                                                class="btn btn-danger custom-width">
+                                        <button type="button" ng-click="client_ctrl.remove(c.securityNumber)">
                                             Remove
                                         </button>
                                     </td>
@@ -131,65 +120,46 @@
                     <div class="products">
                         <h2>Products</h2>
 
-                        <div class="generic-container" ng-controller="ProductController as prod_ctrl">
+                        <div ng-controller="ProductController as prod_ctrl">
 
-                            <form ng-submit="prod_ctrl.submit()" name="productForm" class="form-horizontal">
+                            <form ng-submit="prod_ctrl.submit()" name="productForm">
 
                                 <input type="hidden" ng-model="prod_ctrl.product.barcode"/>
                                 <div class="row">
-                                    <div class="form-group col-md-12">
-                                        <div class="col-md-7">
-                                            <input type="text" ng-model="prod_ctrl.product.name" id="prod_name"
-                                                   class="productName form-control input-sm" placeholder="Name" required
-                                                   ng-minlength="2"/>
+                                    <div>
+                                        <div>
+                                            <input type="text" ng-model="prod_ctrl.product.name" id="prod_name" placeholder="Product name" required ng-minlength="2"/>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="row">
-                                    <div class="form-group col-md-12">
-                                        <div class="col-md-7">
-                                            <input type="text" ng-model="prod_ctrl.product.basePrice" id="basePrice"
-                                                   class="prodBasePrice form-control input-sm" placeholder="Base price"
-                                                   required/>
+                                    <div>
+                                        <div>
+                                            <input type="text" ng-model="prod_ctrl.product.basePrice" id="basePrice" placeholder="Price (EUR)" required/>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="row">
-                                    <div class="form-group col-md-12">
-                                        <div class="col-md-7">
-                                            <input type="text" ng-model="prod_ctrl.product.description" id="description"
-                                                   class="productDescription form-control input-sm" placeholder="Description"
-                                                   required ng-minlength="3"/>
+                                    <div>
+                                        <div>
+                                            <input type="text" ng-model="prod_ctrl.product.description" id="description" placeholder="Description" required ng-minlength="3"/>
                                         </div>
                                     </div>
                                 </div>
 
-                                <!--<div class="row">-->
-                                    <!--<div class="form-group col-md-12">-->
-                                        <!--<div class="col-md-7">-->
-                                            <!--<input type="text" ng-model="prod_ctrl.product.releaseDate" id="releaseDate"-->
-                                                   <!--class="releaseDate form-control input-sm" placeholder="Release date"-->
-                                                   <!--required/>-->
-                                        <!--</div>-->
-                                    <!--</div>-->
-                                <!--</div>-->
-
                                 <div class="row">
-                                    <div class="form-actions floatRight">
-                                        <input type="submit" value="{{!prod_ctrl.product.barcode ? 'Add' : 'Update'}}"
-                                               class="btn btn-primary btn-sm" ng-disabled="productForm.$invalid">
-                                        <button type="button" ng-click="prod_ctrl.reset()" class="btn btn-warning btn-sm"
-                                                ng-disabled="productForm.$pristine">Reset Form
-                                        </button>
+                                    <div>
+                                        <input type="submit" value="{{!prod_ctrl.product.barcode ? 'Add' : 'Update'}}" ng-disabled="productForm.$invalid">
+                                        <button type="button" ng-click="prod_ctrl.reset()" ng-disabled="productForm.$pristine">Reset Form</button>
                                     </div>
                                 </div>
 
                             </form>
 
-                            <div class="panel panel-default">
-                                <table class="table table-hover">
+                            <div>
+                                <table>
                                     <thead>
                                     <tr>
                                         <th>Barcode</th>
@@ -208,12 +178,10 @@
                                         <td><span ng-bind="p.description"></span></td>
                                         <td><span>{{ p.releaseDate | date }}</span></td>
                                         <td>
-                                            <button type="button" ng-click="prod_ctrl.edit(p.barcode)"
-                                                    class="btn btn-success custom-width">
+                                            <button type="button" ng-click="prod_ctrl.edit(p.barcode)">
                                                 Edit
                                             </button>
-                                            <button type="button" ng-click="prod_ctrl.remove(p.barcode)"
-                                                    class="btn btn-danger custom-width">
+                                            <button type="button" ng-click="prod_ctrl.remove(p.barcode)">
                                                 Remove
                                             </button>
                                         </td>
@@ -228,66 +196,38 @@
                         <div class="orders">
                             <h2>Orders</h2>
 
+                            <div ng-controller="OrderController as order_ctrl">
 
-                            <div class="generic-container" ng-controller="OrderController as order_ctrl">
-
-                                <form ng-submit="order_ctrl.submit()" name="orderForm" class="form-horizontal">
+                                <form ng-submit="order_ctrl.submit()" name="orderForm">
 
                                     <input type="hidden" ng-model="order_ctrl.order.orderNr"/>
                                     <div class="row">
-                                        <div class="form-group col-md-12">
-                                            <div class="col-md-7">
-                                                <input type="text" ng-model="order_ctrl.order.client" id="order_client"
-                                                       class="orderClient form-control input-sm" placeholder="Client" required/>
+                                        <div>
+                                            <div>
+                                                <input type="text" ng-model="order_ctrl.order.client" id="order_client" placeholder="Client" required/>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="row">
-                                        <div class="form-group col-md-12">
-                                            <div class="col-md-7">
-                                                <input type="text" ng-model="order_ctrl.order.product" id="order_product"
-                                                       class="orderProduct form-control input-sm" placeholder="Product"
-                                                       required/>
+                                        <div>
+                                            <div>
+                                                <input type="text" ng-model="order_ctrl.order.product" id="order_product" placeholder="Product" required/>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <!--<div class="row">-->
-                                        <!--<div class="form-group col-md-12">-->
-                                            <!--<div class="col-md-7">-->
-                                                <!--<input type="text" ng-model="order_ctrl.order.convertedPrice"-->
-                                                       <!--id="converted_price"-->
-                                                       <!--class="convertedPrice form-control input-sm"-->
-                                                       <!--placeholder="Converted price" required/>-->
-                                            <!--</div>-->
-                                        <!--</div>-->
-                                    <!--</div>-->
-
-                                    <!--<div class="row">-->
-                                        <!--<div class="form-group col-md-12">-->
-                                            <!--<div class="col-md-7">-->
-                                                <!--<input type="text" ng-model="order_ctrl.order.transactionDate" id="transDate"-->
-                                                       <!--class="transactionDate form-control input-sm"-->
-                                                       <!--placeholder="Transaction date" required/>-->
-                                            <!--</div>-->
-                                        <!--</div>-->
-                                    <!--</div>-->
-
                                     <div class="row">
-                                        <div class="form-actions floatRight">
-                                            <input type="submit" value="{{!order_ctrl.order.orderNr ? 'Add' : 'Update'}}"
-                                                   class="btn btn-primary btn-sm" ng-disabled="orderForm.$invalid">
-                                            <button type="button" ng-click="order_ctrl.reset()" class="btn btn-warning btn-sm"
-                                                    ng-disabled="orderForm.$pristine">Reset Form
-                                            </button>
+                                        <div>
+                                            <input type="submit" value="{{!order_ctrl.order.orderNr ? 'Add' : 'Update'}}" ng-disabled="orderForm.$invalid">
+                                            <button type="button" ng-click="order_ctrl.reset()" ng-disabled="orderForm.$pristine">Reset Form</button>
                                         </div>
                                     </div>
 
                                 </form>
 
-                                <div class="panel panel-default">
-                                    <table class="table table-hover">
+                                <div>
+                                    <table>
                                         <thead>
                                         <tr>
                                             <th><a href="#" ng-click="setOrder('orderNr')">Order number</a></th>
@@ -306,8 +246,7 @@
                                             <td><span>{{ o.convertedPrice | currency: "" : 2 }}</span></td>
                                             <td><span>{{ o.transactionDate | date}}</span></td>
                                             <td>
-                                                <button type="button" ng-click="order_ctrl.remove(o.orderNr)"
-                                                        class="btn btn-danger custom-width">
+                                                <button type="button" ng-click="order_ctrl.remove(o.orderNr)">
                                                     Remove
                                                 </button>
                                             </td>

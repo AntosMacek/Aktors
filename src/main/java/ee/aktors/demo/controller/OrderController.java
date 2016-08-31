@@ -4,6 +4,7 @@ import java.util.List;
 
 import ee.aktors.demo.model.Order;
 import ee.aktors.demo.service.OrderService;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -20,7 +21,9 @@ import org.springframework.web.util.UriComponentsBuilder;
 public class OrderController {
 
     @Autowired
-    OrderService orderService;  //Service which will do all data retrieval/manipulation work
+    OrderService orderService;
+
+    private final static Logger logger = Logger.getLogger(ClientController.class);
 
 
     //-------------------Retrieve All Orders--------------------------------------------------------
@@ -29,7 +32,7 @@ public class OrderController {
     public ResponseEntity<List<Order>> listAllOrders() {
         List<Order> orders = orderService.findAllOrders();
         if (orders.isEmpty()) {
-            return new ResponseEntity<List<Order>>(HttpStatus.NO_CONTENT);//You many decide to return HttpStatus.NOT_FOUND
+            return new ResponseEntity<List<Order>>(HttpStatus.NO_CONTENT);
         }
         return new ResponseEntity<List<Order>>(orders, HttpStatus.OK);
     }
@@ -39,10 +42,10 @@ public class OrderController {
 
     @RequestMapping(value = "/order/{orderNr}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Order> getOrder(@PathVariable("orderNr") long orderNr) {
-        System.out.println("Fetching Order with number " + orderNr);
+        logger.info("Fetching Order with number " + orderNr);
         Order order = orderService.findByNumber(orderNr);
         if (order == null) {
-            System.out.println("Order with number " + orderNr + " not found");
+            logger.error("Order with number " + orderNr + " not found");
             return new ResponseEntity<Order>(HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<Order>(order, HttpStatus.OK);
@@ -53,10 +56,10 @@ public class OrderController {
 
     @RequestMapping(value = "/order/", method = RequestMethod.POST)
     public ResponseEntity<Void> createOrder(@RequestBody Order order, UriComponentsBuilder ucBuilder) {
-        System.out.println("Creating Order " + order.getOrderNr());
+        logger.info("Creating Order " + order.getOrderNr());
 
         if (orderService.isOrderExist(order)) {
-            System.out.println("An Order with number " + order.getOrderNr() + " already exist");
+            logger.error("An Order with number " + order.getOrderNr() + " already exist");
             return new ResponseEntity<Void>(HttpStatus.CONFLICT);
         }
 
@@ -67,39 +70,15 @@ public class OrderController {
         return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
     }
 
-
-    //------------------- Update a Order --------------------------------------------------------
-
-//    @RequestMapping(value = "/order/{orderNr}", method = RequestMethod.PUT)
-//    public ResponseEntity<Order> updateOrder(@PathVariable("orderNr") long orderNr, @RequestBody Order order) {
-//        System.out.println("Updating Order " + orderNr);
-//
-//        Order currentOrder = orderService.findByNumber(orderNr);
-//
-//        if (currentOrder == null) {
-//            System.out.println("Order with number " + orderNr + " not found");
-//            return new ResponseEntity<Order>(HttpStatus.NOT_FOUND);
-//        }
-//
-//        currentOrder.setClient(order.getClient());
-//        currentOrder.setProduct(order.getProduct());
-//        currentOrder.setConvertedPrice(order.getConvertedPrice());
-//        currentOrder.setTransactionDate(order.getTransactionDate());
-//
-//        orderService.updateOrder(currentOrder);
-//        return new ResponseEntity<Order>(currentOrder, HttpStatus.OK);
-//    }
-
-
     //------------------- Delete a Order --------------------------------------------------------
 
     @RequestMapping(value = "/order/{orderNr}", method = RequestMethod.DELETE)
     public ResponseEntity<Order> deleteOrder(@PathVariable("orderNr") long orderNr) {
-        System.out.println("Fetching & Deleting Order with number " + orderNr);
+        logger.info("Fetching & Deleting Order with number " + orderNr);
 
         Order order = orderService.findByNumber(orderNr);
         if (order == null) {
-            System.out.println("Unable to delete. Order with number " + orderNr + " not found");
+            logger.error("Unable to delete. Order with number " + orderNr + " not found");
             return new ResponseEntity<Order>(HttpStatus.NOT_FOUND);
         }
 
@@ -107,14 +86,4 @@ public class OrderController {
         return new ResponseEntity<Order>(HttpStatus.NO_CONTENT);
     }
 
-
-    //------------------- Delete All Orders --------------------------------------------------------
-
-    @RequestMapping(value = "/order/", method = RequestMethod.DELETE)
-    public ResponseEntity<Order> deleteAllOrders() {
-        System.out.println("Deleting All Orders");
-
-        orderService.deleteAllOrders();
-        return new ResponseEntity<Order>(HttpStatus.NO_CONTENT);
-    }
 }

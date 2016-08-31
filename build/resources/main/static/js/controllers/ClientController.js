@@ -55,7 +55,7 @@ angular.module('AktorsatorApp').controller('ClientController', ['$scope', 'Clien
 
     function submit() {
         if (self.client.securityNumber === null) {
-            console.log('Saving New Client', self.client);
+            console.log('Trying to save new client...', self.client);
             createClient(self.client);
         } else {
             updateClient(self.client, self.client.securityNumber);
@@ -76,7 +76,7 @@ angular.module('AktorsatorApp').controller('ClientController', ['$scope', 'Clien
 
     function remove(securityNumber) {
         console.log('securityNumber to be deleted', securityNumber);
-        if (self.client.securityNumber === securityNumber) {//clean form if the client to be deleted is shown there.
+        if (self.client.securityNumber === securityNumber) {
             reset();
         }
         deleteClient(securityNumber);
@@ -85,7 +85,7 @@ angular.module('AktorsatorApp').controller('ClientController', ['$scope', 'Clien
 
     function reset() {
         self.client = {securityNumber: null, firstName: '', lastName: '', phoneNumber: '', country: '', address: ''};
-        $scope.clientForm.$setPristine(); //reset Form
+        $scope.clientForm.$setPristine();
     }
 
 }]);

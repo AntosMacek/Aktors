@@ -8,10 +8,6 @@ public interface ClientService {
 
     Client findBySecurityNumber(long securityNumber);
 
-    Client findByFirstName(String firstName);
-
-    Client findByLastName(String lastName);
-
     void saveClient(Client client);
 
     void updateClient(Client client);
@@ -20,8 +16,6 @@ public interface ClientService {
 
     List<Client> findAllClients();
 
-    void deleteAllClients();
-
-    public boolean isClientExist(Client client);
+    boolean isClientExist(Client client);
 
 }

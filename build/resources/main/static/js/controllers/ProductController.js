@@ -55,7 +55,7 @@ angular.module('AktorsatorApp').controller('ProductController', ['$scope', 'Prod
 
     function submit() {
         if (self.product.barcode === null) {
-            console.log('Saving New Product', self.product);
+            console.log('Trying to save new product...', self.product);
             createProduct(self.product);
         } else {
             updateProduct(self.product, self.product.barcode);
@@ -76,7 +76,7 @@ angular.module('AktorsatorApp').controller('ProductController', ['$scope', 'Prod
 
     function remove(barcode) {
         console.log('barcode to be deleted', barcode);
-        if (self.product.barcode === barcode) {//clean form if the product to be deleted is shown there.
+        if (self.product.barcode === barcode) {
             reset();
         }
         deleteProduct(barcode);
@@ -85,7 +85,7 @@ angular.module('AktorsatorApp').controller('ProductController', ['$scope', 'Prod
 
     function reset() {
         self.product = {barcode: null, name: '', basePrice: '', description: '', releaseDate: ''};
-        $scope.productForm.$setPristine(); //reset Form
+        $scope.productForm.$setPristine();
     }
 
 }]);

@@ -34,15 +34,6 @@ public class ProductServiceImpl implements ProductService {
         return null;
     }
 
-    public Product findByName(String name) {
-        for (Product product : products) {
-            if (product.getName().equalsIgnoreCase(name)) {
-                return product;
-            }
-        }
-        return null;
-    }
-
     public void saveProduct(Product product) {
         product.setBarcode(counter.incrementAndGet());
         product.setReleaseDate(System.currentTimeMillis());
@@ -61,39 +52,23 @@ public class ProductServiceImpl implements ProductService {
     }
 
     public void deleteProductByBarcode(long barcode) {
-
-//        for (Iterator<Product> iterator = products.iterator(); iterator.hasNext(); ) {
-//            Product product = iterator.next();
-//            if (product.getBarcode() == barcode) {
-//                iterator.remove();
-//            }
-//        }
-
         for (int i = 0; i < products.size(); i++) {
             if (products.get(i).getBarcode() == barcode) {
                 products.remove(i);
                 productsRepresents.remove(i);
             }
         }
-
     }
 
     public boolean isProductExist(Product product) {
         return findByBarcode(product.getBarcode()) != null;
     }
 
-    public void deleteAllProducts() {
-        products.clear();
-    }
-
     private static List<Product> populateDummyProducts() {
         List<Product> products = new ArrayList<Product>();
-//        Product p1 = new Product(counter.incrementAndGet(), "Sam", 12.59f, "slave", "15/12/2015");
-//        Product p2 = new Product(counter.incrementAndGet(), "Tomygucci", 5.5f, "toy", "31.12.1999");
-//        Product p3 = new Product(counter.incrementAndGet(), "Car", 16.7f, "model", "05-05-2005");
-        Product p1 = new Product(counter.incrementAndGet(), "Sam", 12.59f, "slave"/*, System.currentTimeMillis()*/);
-        Product p2 = new Product(counter.incrementAndGet(), "Tomygucci", 5.5f, "toy"/*, System.currentTimeMillis()*/);
-        Product p3 = new Product(counter.incrementAndGet(), "Car", 16.7f, "model"/*, System.currentTimeMillis()*/);
+        Product p1 = new Product(counter.incrementAndGet(), "Teddy", 12.59f, "bear");
+        Product p2 = new Product(counter.incrementAndGet(), "Tomygucci", 5.5f, "toy");
+        Product p3 = new Product(counter.incrementAndGet(), "Car", 16.7f, "model");
         p1.setReleaseDate(System.currentTimeMillis()-99999999999L);
         p1.setReleaseDate(System.currentTimeMillis());
         p1.setReleaseDate(System.currentTimeMillis()-88888888888L);
@@ -111,18 +86,6 @@ public class ProductServiceImpl implements ProductService {
         productRepresentationMap.put(representer3, p3);
         return products;
     }
-
-//    private static List<String> populateProductsRepresents() {
-//        List<String> represents = new ArrayList<>();
-//        for (Product product : products) {
-//            represents.add(product.getName());
-//        }
-//        return represents;
-//    }
-
-//    public static List<Product> getProducts() {
-//        return products;
-//    }
 
     public static List<String> getProductsRepresents() {
         return productsRepresents;

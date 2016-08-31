@@ -4,6 +4,7 @@ import java.util.List;
 
 import ee.aktors.demo.model.Product;
 import ee.aktors.demo.service.ProductService;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -20,7 +21,9 @@ import org.springframework.web.util.UriComponentsBuilder;
 public class ProductController {
 
     @Autowired
-    ProductService productService;  //Service which will do all data retrieval/manipulation work
+    private ProductService productService;
+
+    private final static Logger logger = Logger.getLogger(ClientController.class);
 
 
     //-------------------Retrieve All Products--------------------------------------------------------
@@ -29,7 +32,7 @@ public class ProductController {
     public ResponseEntity<List<Product>> listAllProducts() {
         List<Product> products = productService.findAllProducts();
         if (products.isEmpty()) {
-            return new ResponseEntity<List<Product>>(HttpStatus.NO_CONTENT);//You many decide to return HttpStatus.NOT_FOUND
+            return new ResponseEntity<List<Product>>(HttpStatus.NO_CONTENT);
         }
         return new ResponseEntity<List<Product>>(products, HttpStatus.OK);
     }
@@ -39,10 +42,10 @@ public class ProductController {
 
     @RequestMapping(value = "/product/{barcode}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Product> getProduct(@PathVariable("barcode") long barcode) {
-        System.out.println("Fetching Product with barcode " + barcode);
+        logger.info("Fetching Product with barcode " + barcode);
         Product product = productService.findByBarcode(barcode);
         if (product == null) {
-            System.out.println("Product with barcode " + barcode + " not found");
+            logger.error("Product with barcode " + barcode + " not found");
             return new ResponseEntity<Product>(HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<Product>(product, HttpStatus.OK);
@@ -53,10 +56,10 @@ public class ProductController {
 
     @RequestMapping(value = "/product/", method = RequestMethod.POST)
     public ResponseEntity<Void> createProduct(@RequestBody Product product, UriComponentsBuilder ucBuilder) {
-        System.out.println("Creating Product " + product.getName());
+        logger.info("Creating Product " + product.getName());
 
         if (productService.isProductExist(product)) {
-            System.out.println("A Product with name " + product.getName() + " already exist");
+            logger.error("A Product with name " + product.getName() + " already exist");
             return new ResponseEntity<Void>(HttpStatus.CONFLICT);
         }
 
@@ -72,12 +75,12 @@ public class ProductController {
 
     @RequestMapping(value = "/product/{barcode}", method = RequestMethod.PUT)
     public ResponseEntity<Product> updateProduct(@PathVariable("barcode") long barcode, @RequestBody Product product) {
-        System.out.println("Updating Product " + barcode);
+        logger.info("Updating Product " + barcode);
 
         Product currentProduct = productService.findByBarcode(barcode);
 
         if (currentProduct == null) {
-            System.out.println("Product with barcode " + barcode + " not found");
+            logger.error("Product with barcode " + barcode + " not found");
             return new ResponseEntity<Product>(HttpStatus.NOT_FOUND);
         }
 
@@ -95,26 +98,15 @@ public class ProductController {
 
     @RequestMapping(value = "/product/{barcode}", method = RequestMethod.DELETE)
     public ResponseEntity<Product> deleteProduct(@PathVariable("barcode") long barcode) {
-        System.out.println("Fetching & Deleting Product with barcode " + barcode);
+        logger.info("Fetching & Deleting Product with barcode " + barcode);
 
         Product product = productService.findByBarcode(barcode);
         if (product == null) {
-            System.out.println("Unable to delete. Product with barcode " + barcode + " not found");
+            logger.error("Unable to delete. Product with barcode " + barcode + " not found");
             return new ResponseEntity<Product>(HttpStatus.NOT_FOUND);
         }
 
         productService.deleteProductByBarcode(barcode);
-        return new ResponseEntity<Product>(HttpStatus.NO_CONTENT);
-    }
-
-
-    //------------------- Delete All Products --------------------------------------------------------
-
-    @RequestMapping(value = "/product/", method = RequestMethod.DELETE)
-    public ResponseEntity<Product> deleteAllProducts() {
-        System.out.println("Deleting All Products");
-
-        productService.deleteAllProducts();
         return new ResponseEntity<Product>(HttpStatus.NO_CONTENT);
     }
 }

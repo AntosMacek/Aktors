@@ -3,8 +3,6 @@ package ee.aktors.demo.model;
 public class Order {
 
     private long orderNr;
-//    private Client client;
-//    private Product product;
     private String client;
     private String product;
     private float convertedPrice;
@@ -13,12 +11,9 @@ public class Order {
     public Order() {
     }
 
-    public Order(long orderNr, String client, String product/*, float convertedPrice, long transactionDate*/) {
-        this.orderNr = orderNr;
+    public Order(String client, String product) {
         this.client = client;
         this.product = product;
-//        this.convertedPrice = convertedPrice;
-//        this.transactionDate = transactionDate;
     }
 
     public long getOrderNr() {

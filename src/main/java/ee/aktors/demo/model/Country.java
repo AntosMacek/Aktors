@@ -4,8 +4,8 @@ public enum Country {
 
     EU,
     USA,
-    CHINA,
-    AUSTRALIA,
-    JAPAN
+    China,
+    Australia,
+    Japan
 
 }

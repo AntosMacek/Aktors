@@ -8,8 +8,6 @@ public interface ProductService {
 
     Product findByBarcode(long barcode);
 
-    Product findByName(String name);
-
     void saveProduct(Product product);
 
     void updateProduct(Product product);
@@ -18,8 +16,6 @@ public interface ProductService {
 
     List<Product> findAllProducts();
 
-    void deleteAllProducts();
-
-    public boolean isProductExist(Product product);
+    boolean isProductExist(Product product);
 
 }

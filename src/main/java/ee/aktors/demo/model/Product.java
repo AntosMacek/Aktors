@@ -1,25 +1,21 @@
 package ee.aktors.demo.model;
 
-import java.util.Date;
-
 public class Product {
 
     private long barcode;
     private String name;
     private float basePrice;
     private String description;
-//    private String releaseDate;
     private long releaseDate;
 
     public Product() {
     }
 
-    public Product(long barcode, String name, float basePrice, String description/*, long releaseDate*/) {
+    public Product(long barcode, String name, float basePrice, String description) {
         this.barcode = barcode;
         this.name = name;
         this.basePrice = basePrice;
         this.description = description;
-//        this.releaseDate = releaseDate;
     }
 
     public long getBarcode() {
@@ -62,12 +58,4 @@ public class Product {
         this.releaseDate = releaseDate;
     }
 
-    @Override
-    public String toString() {
-        return "Product{" +
-                "barcode=" + barcode +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                '}';
-    }
 }

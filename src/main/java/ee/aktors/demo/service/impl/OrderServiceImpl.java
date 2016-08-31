@@ -28,15 +28,10 @@ public class OrderServiceImpl implements OrderService {
     private List<String> products;
     private static Map<String, Float> currencies = new HashMap<>();
 
-//    static {
-//        orders = populateDummyOrders();
-//    }
-
     public OrderServiceImpl() {
         while (currencies.isEmpty()) {
             currencies = parseCurrencies();
         }
-//        orders = populateDummyOrders();
         for (Order o : populateDummyOrders()) {
             saveOrder(o);
         }
@@ -75,24 +70,19 @@ public class OrderServiceImpl implements OrderService {
                 case USA:
                     order.setConvertedPrice(basePrice * currencies.get("USD"));
                     break;
-                case CHINA:
+                case China:
                     order.setConvertedPrice(basePrice * currencies.get("CNY"));
                     break;
-                case AUSTRALIA:
+                case Australia:
                     order.setConvertedPrice(basePrice * currencies.get("AUD"));
                     break;
-                case JAPAN:
+                case Japan:
                     order.setConvertedPrice(basePrice * currencies.get("JPY"));
                     break;
             }
             orders.add(order);
         }
     }
-
-//    public void updateOrder(Order order) {
-//        int index = orders.indexOf(order);
-//        orders.set(index, order);
-//    }
 
     public void deleteOrderByNumber(long orderNr) {
         for (Iterator<Order> iterator = orders.iterator(); iterator.hasNext(); ) {
@@ -107,56 +97,44 @@ public class OrderServiceImpl implements OrderService {
         return findByNumber(order.getOrderNr()) != null;
     }
 
-    public void deleteAllOrders() {
-        orders.clear();
-    }
-
     private static List<Order> populateDummyOrders() {
-        List<Order> orders = new ArrayList<Order>();
-//        orders.add(new Order(counter.incrementAndGet(), ClientServiceImpl.getClientsRepresents().get(0), ProductServiceImpl.getProductsRepresents().get(1), 22.3f, System.currentTimeMillis()));
-//        orders.add(new Order(counter.incrementAndGet(), ClientServiceImpl.getClientsRepresents().get(1), ProductServiceImpl.getProductsRepresents().get(1), 22.3f, System.currentTimeMillis()));
-//        orders.add(new Order(counter.incrementAndGet(), ClientServiceImpl.getClientsRepresents().get(2), ProductServiceImpl.getProductsRepresents().get(2), 22.3f, System.currentTimeMillis()));
-//        orders.add(new Order(counter.incrementAndGet(), ClientServiceImpl.getClientsRepresents().get(2), ProductServiceImpl.getProductsRepresents().get(0), 52.3f, System.currentTimeMillis()-9000009000L));
-//        orders.add(new Order(counter.incrementAndGet(), ClientServiceImpl.getClientsRepresents().get(1), ProductServiceImpl.getProductsRepresents().get(2), 92.3f, System.currentTimeMillis()+9000090000L));
-//        orders.add(new Order(counter.incrementAndGet(), ClientServiceImpl.getClientsRepresents().get(1), ProductServiceImpl.getProductsRepresents().get(1), 92.3f, System.currentTimeMillis()-99999999L));
-        Order o1 = new Order(counter.incrementAndGet(), ClientServiceImpl.getClientsRepresents().get(0), ProductServiceImpl.getProductsRepresents().get(1));
-        Order o2 = new Order(counter.incrementAndGet(), ClientServiceImpl.getClientsRepresents().get(1), ProductServiceImpl.getProductsRepresents().get(1));
-        Order o3 = new Order(counter.incrementAndGet(), ClientServiceImpl.getClientsRepresents().get(2), ProductServiceImpl.getProductsRepresents().get(2));
-        Order o4 = new Order(counter.incrementAndGet(), ClientServiceImpl.getClientsRepresents().get(2), ProductServiceImpl.getProductsRepresents().get(0));
-        Order o5 = new Order(counter.incrementAndGet(), ClientServiceImpl.getClientsRepresents().get(1), ProductServiceImpl.getProductsRepresents().get(2));
-        Order o6 = new Order(counter.incrementAndGet(), ClientServiceImpl.getClientsRepresents().get(1), ProductServiceImpl.getProductsRepresents().get(1));
+        List<Order> orders = new ArrayList<>();
+        Order o1 = new Order(ClientServiceImpl.getClientsRepresents().get(0), ProductServiceImpl.getProductsRepresents().get(1));
+        Order o2 = new Order(ClientServiceImpl.getClientsRepresents().get(1), ProductServiceImpl.getProductsRepresents().get(1));
+        Order o3 = new Order(ClientServiceImpl.getClientsRepresents().get(2), ProductServiceImpl.getProductsRepresents().get(2));
+        Order o4 = new Order(ClientServiceImpl.getClientsRepresents().get(2), ProductServiceImpl.getProductsRepresents().get(0));
+        Order o5 = new Order(ClientServiceImpl.getClientsRepresents().get(1), ProductServiceImpl.getProductsRepresents().get(2));
+        Order o6 = new Order(ClientServiceImpl.getClientsRepresents().get(1), ProductServiceImpl.getProductsRepresents().get(1));
+        Order o7 = new Order(ClientServiceImpl.getClientsRepresents().get(0), ProductServiceImpl.getProductsRepresents().get(2));
+        Order o8 = new Order(ClientServiceImpl.getClientsRepresents().get(0), ProductServiceImpl.getProductsRepresents().get(0));
+        Order o9 = new Order(ClientServiceImpl.getClientsRepresents().get(0), ProductServiceImpl.getProductsRepresents().get(1));
+        Order o10 = new Order(ClientServiceImpl.getClientsRepresents().get(1), ProductServiceImpl.getProductsRepresents().get(1));
+        Order o11 = new Order(ClientServiceImpl.getClientsRepresents().get(0), ProductServiceImpl.getProductsRepresents().get(1));
+        Order o12 = new Order(ClientServiceImpl.getClientsRepresents().get(2), ProductServiceImpl.getProductsRepresents().get(1));
 
-        Order o7 = new Order(counter.incrementAndGet(), ClientServiceImpl.getClientsRepresents().get(0), ProductServiceImpl.getProductsRepresents().get(2));
-        Order o8 = new Order(counter.incrementAndGet(), ClientServiceImpl.getClientsRepresents().get(0), ProductServiceImpl.getProductsRepresents().get(0));
-        Order o9 = new Order(counter.incrementAndGet(), ClientServiceImpl.getClientsRepresents().get(0), ProductServiceImpl.getProductsRepresents().get(1));
-
-        Order o10 = new Order(counter.incrementAndGet(), ClientServiceImpl.getClientsRepresents().get(1), ProductServiceImpl.getProductsRepresents().get(1));
-        Order o11 = new Order(counter.incrementAndGet(), ClientServiceImpl.getClientsRepresents().get(0), ProductServiceImpl.getProductsRepresents().get(1));
-        Order o12 = new Order(counter.incrementAndGet(), ClientServiceImpl.getClientsRepresents().get(2), ProductServiceImpl.getProductsRepresents().get(1));
         long l1 = System.currentTimeMillis();
         long l2 = l1 - l1 % 1000;
         long l  = l2 - l2 % 86400;
+
         o1.setTransactionDate(l);
         o2.setTransactionDate(l);
         o3.setTransactionDate(l);
         o4.setTransactionDate(l-9000009000L);
         o5.setTransactionDate(l+9000009000L);
         o6.setTransactionDate(l-99999999L);
-
         o7.setTransactionDate(l-90000090000L);
         o8.setTransactionDate(l-90000090000L);
         o9.setTransactionDate(l-90000090000L);
-
         o10.setTransactionDate(l-90000090000L);
         o11.setTransactionDate(l-90000090000L);
         o12.setTransactionDate(l-90000090000L);
+
         orders.add(o1);
         orders.add(o2);
         orders.add(o3);
         orders.add(o4);
         orders.add(o5);
         orders.add(o6);
-
         orders.add(o7);
         orders.add(o8);
         orders.add(o9);
@@ -168,34 +146,26 @@ public class OrderServiceImpl implements OrderService {
 
     private boolean isClientPresent(Order order) {
         clients = ClientServiceImpl.getClientsRepresents();
-        boolean answer = clients.contains(order.getClient());
-//        System.out.println("\n\n======================\nClient is " + answer + "\n======================\n\n");
-        return answer;
+        return clients.contains(order.getClient());
     }
 
     private boolean isProductPresent(Order order) {
         products = ProductServiceImpl.getProductsRepresents();
-        boolean answer = products.contains(order.getProduct());
-//        System.out.println("\n\n======================\nProduct is " + answer + "\n======================\n\n");
-        return answer;
+        return products.contains(order.getProduct());
     }
 
 
     private Map<String, Float> parseCurrencies() {
         Map<String, Float> map = new HashMap<>();
 
-        BufferedReader reader = null;
-        try {
-            URL url = new URL(URL_STRING);
-            reader = new BufferedReader(new InputStreamReader(url.openStream()));
-            StringBuffer buffer = new StringBuffer();
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(new URL(URL_STRING).openStream()))) {
+            StringBuilder stringBuilder = new StringBuilder();
             int read;
             char[] chars = new char[1024];
             while ((read = reader.read(chars)) != -1)
-                buffer.append(chars, 0, read);
+                stringBuilder.append(chars, 0, read);
 
-            String readableUrl = buffer.toString();
-            reader.close();
+            String readableUrl = stringBuilder.toString();
 
             JSONObject json = new JSONObject(readableUrl);
 
@@ -209,17 +179,11 @@ public class OrderServiceImpl implements OrderService {
                 Float currencyRate = Float.parseFloat((String) currencyObject.get("Rate"));
                 map.put(currencyName.split("/")[1], currencyRate);
             }
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (JSONException e) {
+        } catch (IOException | JSONException e) {
             e.printStackTrace();
         }
 
-//        System.out.println(map);
-
         return map;
-
     }
 
 }

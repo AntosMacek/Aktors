@@ -49,7 +49,7 @@ angular.module('AktorsatorApp').controller('OrderController', ['$scope', 'OrderS
 
     function submit() {
         if (self.order.orderNr === null) {
-            console.log('Saving New Order', self.order);
+            console.log('Trying to save new order...', self.order);
             createOrder(self.order);
         } else {
             updateOrder(self.order, self.order.orderNr);
@@ -60,7 +60,7 @@ angular.module('AktorsatorApp').controller('OrderController', ['$scope', 'OrderS
 
     function remove(orderNr) {
         console.log('Order (number) to be deleted', orderNr);
-        if (self.order.orderNr === orderNr) {//clean form if the order to be deleted is shown there.
+        if (self.order.orderNr === orderNr) {
             reset();
         }
         deleteOrder(orderNr);
@@ -69,7 +69,7 @@ angular.module('AktorsatorApp').controller('OrderController', ['$scope', 'OrderS
 
     function reset() {
         self.order = {orderNr: null, client: '', product: '', convertedPrice: '', transactionDate: ''};
-        $scope.orderForm.$setPristine(); //reset Form
+        $scope.orderForm.$setPristine();
     }
 
 }]);
