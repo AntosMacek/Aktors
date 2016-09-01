@@ -6,6 +6,7 @@ import ee.aktors.demo.service.ProductService;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 
 @Service("productService")
@@ -13,7 +14,7 @@ public class ProductServiceImpl implements ProductService {
 
     private static final AtomicLong COUNTER = new AtomicLong();
 
-    private static Map<String, Product> productRepresentationMap = new HashMap<>();
+    private static Map<String, Product> productRepresentationMap = new ConcurrentHashMap<>();
 
 
 //    static {
@@ -43,15 +44,26 @@ public class ProductServiceImpl implements ProductService {
     }
 
     public void updateProduct(Product product) {
-        String representer = product.getName();
-        productRepresentationMap.put(representer, product);
+
+        Iterator iterator = productRepresentationMap.entrySet().iterator();
+        while (iterator.hasNext()) {
+            Map.Entry entry = (Map.Entry) iterator.next();
+            Product productToUpdate = (Product) entry.getValue();
+            if (product.getBarcode() == productToUpdate.getBarcode()) {
+                iterator.remove();
+                String representer = product.getName();
+                productRepresentationMap.put(representer, product);
+            }
+        }
     }
 
     public void deleteProductByBarcode(long barcode) {
-        for (Map.Entry<String, Product> entry : productRepresentationMap.entrySet()) {
-            Product product = entry.getValue();
+        Iterator iterator = productRepresentationMap.entrySet().iterator();
+        while (iterator.hasNext()) {
+            Map.Entry entry = (Map.Entry) iterator.next();
+            Product product = (Product) entry.getValue();
             if (product.getBarcode() == barcode) {
-                productRepresentationMap.remove(entry.getKey());
+                iterator.remove();
             }
         }
     }
