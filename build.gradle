@@ -34,8 +34,6 @@ dependencies {
 	compile("org.springframework.boot:spring-boot-starter-jetty")
 	compile('org.springframework.boot:spring-boot-starter-web-services')
 	compile('org.springframework.boot:spring-boot-starter-websocket')
-	compile('org.springframework.boot:spring-boot-starter-jdbc')
-	runtime('org.hsqldb:hsqldb')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	compile group: 'org.json', name: 'json', version: '20090211'
 

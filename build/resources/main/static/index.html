@@ -65,7 +65,7 @@
                             <div class="row">
                                 <div>
                                     <div>
-                                        <input type="text" ng-model="client_ctrl.client.address" id="address" placeholder="Address"/>
+                                        <input type="text" ng-model="client_ctrl.client.address" id="address" placeholder="Address" required/>
                                     </div>
                                 </div>
                             </div>
@@ -244,7 +244,6 @@
                                             <td><span>{{ o.client }}</span></td>
                                             <td><span>{{ o.product }}</span></td>
                                             <td><span>{{ o.convertedPrice | currency: "" : 2 }}</span></td>
-                                            <td><span>{{ o.transactionDate}}</span></td>
                                             <td><span>{{ o.transactionDate | date}}</span></td>
                                             <td>
                                                 <button type="button" ng-click="order_ctrl.remove(o.orderNr)">
