@@ -58,7 +58,7 @@ angular.module('AktorsatorApp').factory('OrderService', ['$http', '$q', function
 
     function updateOrders() {
         var deferred = $q.defer();
-        $http.updateOrders(REST_SERVICE_URI)
+        $http.get(REST_SERVICE_URI + 'update')
             .then(
                 function (response) {
                     deferred.resolve(response.data);

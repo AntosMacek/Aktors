@@ -7,19 +7,27 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshotsToTreeSnapshotsIndex.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshotsToTreeSnapshotsIndex.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/ee/aktors/demo/controller/ClientController.class" afterPath="$PROJECT_DIR$/build/classes/main/ee/aktors/demo/controller/ClientController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/ee/aktors/demo/controller/OrderController.class" afterPath="$PROJECT_DIR$/build/classes/main/ee/aktors/demo/controller/OrderController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/ee/aktors/demo/model/Client.class" afterPath="$PROJECT_DIR$/build/classes/main/ee/aktors/demo/model/Client.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/ee/aktors/demo/model/Order.class" afterPath="$PROJECT_DIR$/build/classes/main/ee/aktors/demo/model/Order.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/ee/aktors/demo/model/Product.class" afterPath="$PROJECT_DIR$/build/classes/main/ee/aktors/demo/model/Product.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/ee/aktors/demo/service/OrderService.class" afterPath="$PROJECT_DIR$/build/classes/main/ee/aktors/demo/service/OrderService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/ee/aktors/demo/service/impl/ClientServiceImpl.class" afterPath="$PROJECT_DIR$/build/classes/main/ee/aktors/demo/service/impl/ClientServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/ee/aktors/demo/service/impl/OrderServiceImpl$1.class" afterPath="$PROJECT_DIR$/build/classes/main/ee/aktors/demo/service/impl/OrderServiceImpl$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/ee/aktors/demo/service/impl/OrderServiceImpl.class" afterPath="$PROJECT_DIR$/build/classes/main/ee/aktors/demo/service/impl/OrderServiceImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/static/index.html" afterPath="$PROJECT_DIR$/build/resources/main/static/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/static/js/controllers/ClientController.js" afterPath="$PROJECT_DIR$/build/resources/main/static/js/controllers/ClientController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/static/js/controllers/OrderController.js" afterPath="$PROJECT_DIR$/build/resources/main/static/js/controllers/OrderController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/static/js/services/OrderService.js" afterPath="$PROJECT_DIR$/build/resources/main/static/js/services/OrderService.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ee/aktors/demo/controller/OrderController.java" afterPath="$PROJECT_DIR$/src/main/java/ee/aktors/demo/controller/OrderController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ee/aktors/demo/model/Client.java" afterPath="$PROJECT_DIR$/src/main/java/ee/aktors/demo/model/Client.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ee/aktors/demo/model/Order.java" afterPath="$PROJECT_DIR$/src/main/java/ee/aktors/demo/model/Order.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ee/aktors/demo/model/Product.java" afterPath="$PROJECT_DIR$/src/main/java/ee/aktors/demo/model/Product.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ee/aktors/demo/service/OrderService.java" afterPath="$PROJECT_DIR$/src/main/java/ee/aktors/demo/service/OrderService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ee/aktors/demo/service/impl/ClientServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/ee/aktors/demo/service/impl/ClientServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ee/aktors/demo/service/impl/OrderServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/ee/aktors/demo/service/impl/OrderServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ee/aktors/demo/service/impl/ProductServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/ee/aktors/demo/service/impl/ProductServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" afterPath="$PROJECT_DIR$/src/main/resources/static/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/js/controllers/ClientController.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/controllers/ClientController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/js/controllers/OrderController.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/controllers/OrderController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/js/services/OrderService.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/services/OrderService.js" />
     </list>
@@ -71,84 +79,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="OrderController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ee/aktors/demo/controller/OrderController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1440">
-              <caret line="100" column="7" selection-start-line="100" selection-start-column="7" selection-end-line="100" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="558">
-              <caret line="154" column="90" selection-start-line="154" selection-start-column="90" selection-end-line="154" selection-end-column="90" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Product.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ee/aktors/demo/model/Product.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProductService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ee/aktors/demo/service/ProductService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProductServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ee/aktors/demo/service/impl/ProductServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1206">
-              <caret line="77" column="97" selection-start-line="77" selection-start-column="97" selection-end-line="77" selection-end-column="97" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProductController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/controllers/ProductController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1033">
-              <caret line="87" column="42" selection-start-line="87" selection-start-column="42" selection-end-line="87" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProductService.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/services/ProductService.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="OrderServiceImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ee/aktors/demo/service/impl/OrderServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1802">
-              <caret line="55" column="53" selection-start-line="55" selection-start-column="53" selection-end-line="55" selection-end-column="53" />
+            <state relative-caret-position="2304">
+              <caret line="130" column="5" selection-start-line="130" selection-start-column="5" selection-end-line="130" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrderController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ee/aktors/demo/controller/OrderController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="655">
+              <caret line="95" column="36" selection-start-line="95" selection-start-column="36" selection-end-line="95" selection-end-column="36" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -573,9 +521,7 @@
         <option value="$PROJECT_DIR$/src/main/java/ee/aktors/demo/service/ClientServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/ee/aktors/demo/service/ProductServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/ee/aktors/demo/service/OrderServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/controllers/ClientController.js" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/controllers/ProductController.js" />
-        <option value="$PROJECT_DIR$/src/main/java/ee/aktors/demo/model/Order.java" />
         <option value="$PROJECT_DIR$/src/main/java/ee/aktors/demo/service/ProductService.java" />
         <option value="$PROJECT_DIR$/src/main/java/ee/aktors/demo/controller/ProductController.java" />
         <option value="$PROJECT_DIR$/src/main/java/ee/aktors/demo/AktorsDemoApplication.java" />
@@ -585,21 +531,23 @@
         <option value="$PROJECT_DIR$/src/main/java/ee/aktors/demo/model/Country.java" />
         <option value="$PROJECT_DIR$/src/main/java/ee/aktors/demo/service/ClientService.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/src/main/java/ee/aktors/demo/model/Client.java" />
         <option value="$PROJECT_DIR$/src/test/java/ee/aktors/demo/ClientTests.java" />
         <option value="$PROJECT_DIR$/src/test/java/ee/aktors/demo/ProductTests.java" />
         <option value="$PROJECT_DIR$/src/test/java/ee/aktors/demo/OrderTests.java" />
         <option value="$PROJECT_DIR$/src/test/java/ee/aktors/demo/ServiceTests.java" />
         <option value="$PROJECT_DIR$/src/main/java/ee/aktors/demo/controller/ClientController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ee/aktors/demo/service/impl/ClientServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/services/OrderService.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/controllers/OrderController.js" />
-        <option value="$PROJECT_DIR$/src/main/java/ee/aktors/demo/service/impl/OrderServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ee/aktors/demo/service/OrderService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ee/aktors/demo/controller/OrderController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/index.html" />
         <option value="$PROJECT_DIR$/src/main/java/ee/aktors/demo/model/Product.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ee/aktors/demo/model/Order.java" />
         <option value="$PROJECT_DIR$/src/main/java/ee/aktors/demo/service/impl/ProductServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ee/aktors/demo/service/OrderService.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/index.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/controllers/ClientController.js" />
+        <option value="$PROJECT_DIR$/src/main/java/ee/aktors/demo/service/impl/ClientServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ee/aktors/demo/model/Client.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/controllers/OrderController.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/services/OrderService.js" />
+        <option value="$PROJECT_DIR$/src/main/java/ee/aktors/demo/controller/OrderController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ee/aktors/demo/service/impl/OrderServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -1678,7 +1626,7 @@
       <workItem from="1472713726231" duration="25290000" />
       <workItem from="1472803466200" duration="2580000" />
       <workItem from="1472894546027" duration="129000" />
-      <workItem from="1472894827071" duration="3161000" />
+      <workItem from="1472894827071" duration="11950000" />
     </task>
     <servers />
   </component>
@@ -1715,7 +1663,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103772000" />
+    <option name="totallyTimeSpent" value="112561000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="26" width="1920" height="1053" extended-state="6" />
@@ -1842,6 +1790,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+          <folding>
+            <element signature="e#1434#1435#0" expanded="true" />
+            <element signature="e#1472#1473#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1910,14 +1862,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ee/aktors/demo/controller/ProductController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="45" column="8" selection-start-line="45" selection-start-column="8" selection-end-line="50" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -1930,6 +1874,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1971,13 +1916,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ee/aktors/demo/model/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="76" column="18" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/ee/aktors/demo/ClientTests.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/ee/aktors/demo/OrderTests.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/ee/aktors/demo/ProductTests.java" />
@@ -1988,52 +1926,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/services/ClientService.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ee/aktors/demo/service/ProductService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="774">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="57" selection-end-column="5" />
+        <state relative-caret-position="72">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ee/aktors/demo/service/impl/ClientServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ee/aktors/demo/controller/ProductController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="58" column="16" selection-start-line="58" selection-start-column="14" selection-end-line="58" selection-end-column="16" />
+        <state relative-caret-position="252">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ee/aktors/demo/model/Product.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="727">
+          <caret line="64" column="41" selection-start-line="64" selection-start-column="41" selection-end-line="64" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ee/aktors/demo/model/Order.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding>
-            <marker date="1472896142041" expanded="false" signature="2487:2495" ph="&lt;~&gt;" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/controllers/ClientController.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ee/aktors/demo/service/impl/ProductServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="63" column="16" selection-start-line="63" selection-start-column="16" selection-end-line="63" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/services/OrderService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="691">
-          <caret line="66" column="62" selection-start-line="66" selection-start-column="62" selection-end-line="66" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/controllers/OrderController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1332">
-          <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ee/aktors/demo/controller/ClientController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1294">
-          <caret line="93" column="72" selection-start-line="93" selection-start-column="72" selection-end-line="93" selection-end-column="72" />
+        <state relative-caret-position="234">
+          <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="21" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -2046,18 +1976,85 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ee/aktors/demo/controller/OrderController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ee/aktors/demo/controller/ClientController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1440">
-          <caret line="100" column="7" selection-start-line="100" selection-start-column="7" selection-end-line="100" selection-end-column="7" />
+        <state relative-caret-position="574">
+          <caret line="93" column="72" selection-start-line="93" selection-start-column="72" selection-end-line="93" selection-end-column="72" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ee/aktors/demo/model/Order.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/services/ClientService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+        <state relative-caret-position="-11">
+          <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ee/aktors/demo/service/impl/ClientServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="41" column="41" selection-start-line="41" selection-start-column="41" selection-end-line="41" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ee/aktors/demo/model/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <element signature="e#1434#1435#0" expanded="true" />
+            <element signature="e#1472#1473#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/services/OrderService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="637">
+          <caret line="60" column="44" selection-start-line="60" selection-start-column="44" selection-end-line="60" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="252" column="77" selection-start-line="252" selection-start-column="77" selection-end-line="252" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/controllers/ClientController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="43" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/controllers/OrderController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="781">
+          <caret line="81" column="5" selection-start-line="81" selection-start-column="5" selection-end-line="81" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ee/aktors/demo/controller/OrderController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="655">
+          <caret line="95" column="36" selection-start-line="95" selection-start-column="36" selection-end-line="95" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/controllers/ProductController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-713">
+          <caret line="2" column="88" selection-start-line="2" selection-start-column="77" selection-end-line="2" selection-end-column="88" />
           <folding />
         </state>
       </provider>
@@ -2070,50 +2067,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/controllers/ProductController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1033">
-          <caret line="87" column="42" selection-start-line="87" selection-start-column="42" selection-end-line="87" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="154" column="90" selection-start-line="154" selection-start-column="90" selection-end-line="154" selection-end-column="90" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ee/aktors/demo/model/Product.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ee/aktors/demo/service/ProductService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ee/aktors/demo/service/impl/ProductServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1206">
-          <caret line="77" column="97" selection-start-line="77" selection-start-column="97" selection-end-line="77" selection-end-column="97" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ee/aktors/demo/service/impl/OrderServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1802">
-          <caret line="55" column="53" selection-start-line="55" selection-start-column="53" selection-end-line="55" selection-end-column="53" />
+        <state relative-caret-position="2304">
+          <caret line="130" column="5" selection-start-line="130" selection-start-column="5" selection-end-line="130" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

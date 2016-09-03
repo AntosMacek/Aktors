@@ -91,13 +91,14 @@ public class OrderController {
         return new ResponseEntity<Order>(HttpStatus.NO_CONTENT);
     }
 
-//    @RequestMapping(value = "/order/", method = RequestMethod.GET)
-//    public ResponseEntity<List<Order>> updateOrders() {
-//        List<Order> orders = orderService.updateOrders();
-//        if (orders.isEmpty()) {
-//            return new ResponseEntity<List<Order>>(HttpStatus.NO_CONTENT);
-//        }
-//        return new ResponseEntity<List<Order>>(orders, HttpStatus.OK);
-//    }
+    @RequestMapping(value = "/order/update", method = RequestMethod.GET)
+    public ResponseEntity<List<Order>> updateOrders() {
+        logger.info("Updating orders");
+        List<Order> orders = orderService.updateOrders();
+        if (orders.isEmpty()) {
+            return new ResponseEntity<List<Order>>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<List<Order>>(orders, HttpStatus.OK);
+    }
 
 }

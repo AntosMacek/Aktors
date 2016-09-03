@@ -8,6 +8,7 @@ public class Client {
     private String phoneNumber;
     private Country country;
     private String address;
+    private String representer;
 
     public Client() {
     }
@@ -71,6 +72,14 @@ public class Client {
 
     public String getClientName() {
         return firstName + " " + lastName;
+    }
+
+    public String getRepresenter() {
+        return representer;
+    }
+
+    public void setRepresenter(String representer) {
+        this.representer = representer;
     }
 
     @Override

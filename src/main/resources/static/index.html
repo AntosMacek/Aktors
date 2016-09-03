@@ -212,7 +212,7 @@
                                     <div class="row">
                                         <div>
                                             <div>
-                                                <input type="text" ng-model="order_ctrl.order.client" id="order_client" placeholder="Client" required/>
+                                                <input type="text" ng-model="order_ctrl.order.client.securityNumber" id="order_client" placeholder="Client id" required/>
                                             </div>
                                         </div>
                                     </div>
@@ -220,7 +220,7 @@
                                     <div class="row">
                                         <div>
                                             <div>
-                                                <input type="text" ng-model="order_ctrl.order.product" id="order_product" placeholder="Product" required/>
+                                                <input type="text" ng-model="order_ctrl.order.product.barcode" id="order_product" placeholder="Product id" required/>
                                             </div>
                                         </div>
                                     </div>
@@ -229,7 +229,7 @@
                                         <div>
                                             <input type="submit" value="{{!order_ctrl.order.orderNr ? 'Add' : 'Update'}}" ng-disabled="orderForm.$invalid">
                                             <button type="button" ng-click="order_ctrl.reset()" ng-disabled="orderForm.$pristine">Reset Form</button>
-                                            <!--<button type="button" ng-click="order_ctrl.updateOrders()">Update Orders</button>-->
+                                            <button type="button" ng-click="order_ctrl.updateOrders()">Update Orders</button>
                                         </div>
                                     </div>
 
@@ -250,8 +250,8 @@
                                         <tbody>
                                         <tr ng-repeat="o in order_ctrl.orders | orderBy : order">
                                             <td><span>{{ o.orderNr }}</span></td>
-                                            <td><span>{{ o.client }}</span></td>
-                                            <td><span>{{ o.product }}</span></td>
+                                            <td><span>{{ o.client.representer }}</span></td>
+                                            <td><span>{{ o.product.name }}</span></td>
                                             <td><span>{{ o.convertedPrice | currency: "" : 2 }}</span></td>
                                             <td><span>{{ o.transactionDate | date}}</span></td>
                                             <td>

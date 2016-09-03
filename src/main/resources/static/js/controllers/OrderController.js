@@ -5,7 +5,7 @@ angular.module('AktorsatorApp').controller('OrderController', ['$scope', 'OrderS
     };
 
     var self = this;
-    self.order = {orderNr: null, client: '', product: '', convertedPrice: '', transactionDate: ''};
+    self.order = {orderNr: null, client: {}, product: {}, convertedPrice: '', transactionDate: ''};
     self.orders = [];
 
     self.submit = submit;
@@ -66,7 +66,7 @@ angular.module('AktorsatorApp').controller('OrderController', ['$scope', 'OrderS
 
 
     function reset() {
-        self.order = {orderNr: null, client: '', product: '', convertedPrice: '', transactionDate: ''};
+        self.order = {orderNr: null, client: {}, product: {}, convertedPrice: '', transactionDate: ''};
         $scope.orderForm.$setPristine();
     }
 
