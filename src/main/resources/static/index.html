@@ -151,6 +151,14 @@
 
                                 <div class="row">
                                     <div>
+                                        <div>
+                                            <input type="date" ng-model="prod_ctrl.product.releaseDate" value="{{ releaseDate | date: 'dd.MM.yyyy' }}" id="releaseDate" placeholder="Release date" required/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div>
                                         <input type="submit" value="{{!prod_ctrl.product.barcode ? 'Add' : 'Update'}}" ng-disabled="productForm.$invalid">
                                         <button type="button" ng-click="prod_ctrl.reset()" ng-disabled="productForm.$pristine">Reset Form</button>
                                     </div>
@@ -221,6 +229,7 @@
                                         <div>
                                             <input type="submit" value="{{!order_ctrl.order.orderNr ? 'Add' : 'Update'}}" ng-disabled="orderForm.$invalid">
                                             <button type="button" ng-click="order_ctrl.reset()" ng-disabled="orderForm.$pristine">Reset Form</button>
+                                            <!--<button type="button" ng-click="order_ctrl.updateOrders()">Update Orders</button>-->
                                         </div>
                                     </div>
 

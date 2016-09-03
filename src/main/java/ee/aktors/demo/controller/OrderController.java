@@ -2,8 +2,13 @@ package ee.aktors.demo.controller;
 
 import java.util.List;
 
+import ee.aktors.demo.model.Client;
 import ee.aktors.demo.model.Order;
+import ee.aktors.demo.model.Product;
+import ee.aktors.demo.service.ClientService;
 import ee.aktors.demo.service.OrderService;
+import ee.aktors.demo.service.impl.ClientServiceImpl;
+import ee.aktors.demo.service.impl.ProductServiceImpl;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -85,5 +90,14 @@ public class OrderController {
         orderService.deleteOrderByNumber(orderNr);
         return new ResponseEntity<Order>(HttpStatus.NO_CONTENT);
     }
+
+//    @RequestMapping(value = "/order/", method = RequestMethod.GET)
+//    public ResponseEntity<List<Order>> updateOrders() {
+//        List<Order> orders = orderService.updateOrders();
+//        if (orders.isEmpty()) {
+//            return new ResponseEntity<List<Order>>(HttpStatus.NO_CONTENT);
+//        }
+//        return new ResponseEntity<List<Order>>(orders, HttpStatus.OK);
+//    }
 
 }

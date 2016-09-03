@@ -11,6 +11,7 @@ angular.module('AktorsatorApp').controller('OrderController', ['$scope', 'OrderS
     self.submit = submit;
     self.remove = remove;
     self.reset = reset;
+    self.updateOrders = updateOrders;
 
 
     fetchAllOrders();
@@ -51,9 +52,6 @@ angular.module('AktorsatorApp').controller('OrderController', ['$scope', 'OrderS
         if (self.order.orderNr === null) {
             console.log('Trying to save new order...', self.order);
             createOrder(self.order);
-        } else {
-            updateOrder(self.order, self.order.orderNr);
-            console.log('Order updated with number ', self.order.orderNr);
         }
         reset();
     }
@@ -70,6 +68,17 @@ angular.module('AktorsatorApp').controller('OrderController', ['$scope', 'OrderS
     function reset() {
         self.order = {orderNr: null, client: '', product: '', convertedPrice: '', transactionDate: ''};
         $scope.orderForm.$setPristine();
+    }
+
+    function updateOrders() {
+        console.log('Orders to be updated');
+        OrderService.updateOrders()
+            .then(
+                fetchAllOrders,
+                function (errResponse) {
+                    console.error('Error while updating Orders');
+                }
+            );
     }
 
 }]);

@@ -1,7 +1,6 @@
 package ee.aktors.demo.service.impl;
 
 import ee.aktors.demo.model.Client;
-import ee.aktors.demo.model.Country;
 import ee.aktors.demo.service.ClientService;
 import org.springframework.stereotype.Service;
 
@@ -43,7 +42,6 @@ public class ClientServiceImpl implements ClientService {
     }
 
     public void updateClient(Client client) {
-
         Iterator iterator = clientRepresentationMap.entrySet().iterator();
         while (iterator.hasNext()) {
             Map.Entry entry = (Map.Entry) iterator.next();

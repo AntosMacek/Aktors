@@ -38,7 +38,6 @@ public class ProductServiceImpl implements ProductService {
 
     public void saveProduct(Product product) {
         product.setBarcode(COUNTER.incrementAndGet());
-        product.setReleaseDate(System.currentTimeMillis());
         String representer = product.getName();
         productRepresentationMap.put(representer, product);
     }
@@ -74,12 +73,9 @@ public class ProductServiceImpl implements ProductService {
 
     private static List<Product> populateDummyProducts() {
         List<Product> products = new ArrayList<Product>();
-        Product p1 = new Product(COUNTER.incrementAndGet(), "Teddy", 12.59f, "bear");
-        Product p2 = new Product(COUNTER.incrementAndGet(), "Tomygucci", 5.5f, "toy");
-        Product p3 = new Product(COUNTER.incrementAndGet(), "Car", 16.7f, "model");
-        p1.setReleaseDate(System.currentTimeMillis()-99999999999L);
-        p1.setReleaseDate(System.currentTimeMillis());
-        p1.setReleaseDate(System.currentTimeMillis()-88888888888L);
+        Product p1 = new Product(COUNTER.incrementAndGet(), "Teddy", 12.59f, "bear", "12/12/2012");
+        Product p2 = new Product(COUNTER.incrementAndGet(), "Tomygucci", 5.5f, "toy", "11/11/2011");
+        Product p3 = new Product(COUNTER.incrementAndGet(), "Car", 16.7f, "model", "10/10/2010");
         products.add(p1);
         products.add(p2);
         products.add(p3);

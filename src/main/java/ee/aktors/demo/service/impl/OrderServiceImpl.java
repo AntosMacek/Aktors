@@ -82,6 +82,14 @@ public class OrderServiceImpl implements OrderService {
         }
     }
 
+//    public List<Order> updateOrders() {
+//        Map<String, Client> clientMap = ClientServiceImpl.getClientRepresentationMap();
+//        Map<String, Product> productMap = ProductServiceImpl.getProductRepresentationMap();
+//
+//
+//        return orders;
+//    }
+
     public void deleteOrderByNumber(long orderNr) {
         for (Iterator<Order> iterator = orders.iterator(); iterator.hasNext(); ) {
             Order order = iterator.next();

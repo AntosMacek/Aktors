@@ -6,16 +6,17 @@ public class Product {
     private String name;
     private float basePrice;
     private String description;
-    private long releaseDate;
+    private String releaseDate;
 
     public Product() {
     }
 
-    public Product(long barcode, String name, float basePrice, String description) {
+    public Product(long barcode, String name, float basePrice, String description, String releaseDate) {
         this.barcode = barcode;
         this.name = name;
         this.basePrice = basePrice;
         this.description = description;
+        this.releaseDate = releaseDate;
     }
 
     public long getBarcode() {
@@ -50,11 +51,11 @@ public class Product {
         this.description = description;
     }
 
-    public long getReleaseDate() {
+    public String getReleaseDate() {
         return releaseDate;
     }
 
-    public void setReleaseDate(long releaseDate) {
+    public void setReleaseDate(String releaseDate) {
         this.releaseDate = releaseDate;
     }
 
