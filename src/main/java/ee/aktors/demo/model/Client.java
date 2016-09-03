@@ -82,12 +82,26 @@ public class Client {
         this.representer = representer;
     }
 
+//    @Override
+//    public String toString() {
+//        return "Client{" +
+//                "securityNumber=" + securityNumber +
+//                ", firstName='" + firstName + '\'' +
+//                ", lastName='" + lastName + '\'' +
+//                '}';
+//    }
+
+
     @Override
     public String toString() {
         return "Client{" +
                 "securityNumber=" + securityNumber +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", country=" + country +
+                ", address='" + address + '\'' +
+                ", representer='" + representer + '\'' +
                 '}';
     }
 }

@@ -28,6 +28,9 @@ public class OrderServiceImpl implements OrderService {
     private static List<Product> orderedProducts = new ArrayList<>();
     private static Map<String, Float> currencies = new HashMap<>();
 
+    private ClientServiceImpl clientService = new ClientServiceImpl();
+    private ProductServiceImpl productService = new ProductServiceImpl();
+
     public OrderServiceImpl() {
         while (currencies.isEmpty()) {
             currencies = parseCurrencies();
@@ -49,28 +52,38 @@ public class OrderServiceImpl implements OrderService {
     }
 
     public void saveOrder(Order order) {
-        order = new Order(order.getClient().getSecurityNumber(), order.getProduct().getBarcode());
+//        order = new Order(order.getClient().getSecurityNumber(), order.getProduct().getBarcode());
+        Client client = clientService.findBySecurityNumber(order.getClient().getSecurityNumber());
+        Product product = productService.findByBarcode(order.getProduct().getBarcode());
+        order.setClient(client);
+        order.setProduct(product);
         if (isClientPresent(order) && isProductPresent(order)) {
             do {
                 currencies = parseCurrencies();
             } while (currencies.isEmpty());
-            order.setOrderNr(COUNTER.incrementAndGet());
-            if (order.getTransactionDate() == 0L) {
-                long l1 = System.currentTimeMillis();
-                long l2 = l1 - l1 % 1000;
-                long dayDate  = l2 - l2 % 86400000;
-                order.setTransactionDate(dayDate);
-            }
+
+            generateTransactionDate(order);
+
 //            Client client = ClientServiceImpl.getClientRepresentationMap().get(order.getClient());
 //            Product product = ProductServiceImpl.getProductRepresentationMap().get(order.getProduct());
             convertPrice(order);
             orders.add(order);
-            orderedClients.add(order.getClient());
-            orderedProducts.add(order.getProduct());
+            orderedClients.add(client);
+            orderedProducts.add(product);
         }
     }
 
-    private void convertPrice(Order order) {
+    public void generateTransactionDate(Order order) {
+        order.setOrderNr(COUNTER.incrementAndGet());
+        if (order.getTransactionDate() == 0L) {
+            long l1 = System.currentTimeMillis();
+            long l2 = l1 - l1 % 1000;
+            long dayDate  = l2 - l2 % 86400000;
+            order.setTransactionDate(dayDate);
+        }
+    }
+
+    public void convertPrice(Order order) {
         Client client = order.getClient();
         Product product = order.getProduct();
         Float basePrice = product.getBasePrice();
@@ -143,55 +156,55 @@ public class OrderServiceImpl implements OrderService {
         return findByNumber(order.getOrderNr()) != null;
     }
 
-    private static List<Order> populateDummyOrders() {
-        List<Order> orders = new ArrayList<>();
-        List<Client> clients = new ArrayList<>(ClientServiceImpl.getClientRepresentationMap().values());
-//        List<String> products = new ArrayList<>(ProductServiceImpl.getProductRepresentationMap().keySet());
-        List<Product> products = new ArrayList<>(ProductServiceImpl.getProductRepresentationMap().values());
-        Order o1 = new Order(clients.get(0).getSecurityNumber(), products.get(1).getBarcode());
-        Order o2 = new Order(clients.get(1).getSecurityNumber(), products.get(1).getBarcode());
-        Order o3 = new Order(clients.get(2).getSecurityNumber(), products.get(2).getBarcode());
-//        Order o4 = new Order(createRepresenter(clients.get(2)), products.get(0));
-//        Order o5 = new Order(createRepresenter(clients.get(1)), products.get(2));
-//        Order o6 = new Order(createRepresenter(clients.get(1)), products.get(1));
-//        Order o7 = new Order(createRepresenter(clients.get(0)), products.get(2));
-//        Order o8 = new Order(createRepresenter(clients.get(0)), products.get(0));
-//        Order o9 = new Order(createRepresenter(clients.get(0)), products.get(1));
-//        Order o10 = new Order(createRepresenter(clients.get(1)), products.get(1));
-//        Order o11 = new Order(createRepresenter(clients.get(0)), products.get(1));
-//        Order o12 = new Order(createRepresenter(clients.get(2)), products.get(1));
-
-        long l1 = System.currentTimeMillis();
-        long l2 = l1 - l1 % 1000;
-        long l  = l2 - l2 % 86400;
-
-        o1.setTransactionDate(l);
-        o2.setTransactionDate(l);
-        o3.setTransactionDate(l);
-//        o4.setTransactionDate(l-9000009000L);
-//        o5.setTransactionDate(l+9000009000L);
-//        o6.setTransactionDate(l-99999999L);
-//        o7.setTransactionDate(l-90000090000L);
-//        o8.setTransactionDate(l-90000090000L);
-//        o9.setTransactionDate(l-90000090000L);
-//        o10.setTransactionDate(l-90000090000L);
-//        o11.setTransactionDate(l-90000090000L);
-//        o12.setTransactionDate(l-90000090000L);
-
-        orders.add(o1);
-        orders.add(o2);
-        orders.add(o3);
-//        orders.add(o4);
-//        orders.add(o5);
-//        orders.add(o6);
-//        orders.add(o7);
-//        orders.add(o8);
-//        orders.add(o9);
-//        orders.add(o10);
-//        orders.add(o11);
-//        orders.add(o12);
-        return orders;
-    }
+//    private static List<Order> populateDummyOrders() {
+//        List<Order> orders = new ArrayList<>();
+//        List<Client> clients = new ArrayList<>(ClientServiceImpl.getClientRepresentationMap().values());
+////        List<String> products = new ArrayList<>(ProductServiceImpl.getProductRepresentationMap().keySet());
+//        List<Product> products = new ArrayList<>(ProductServiceImpl.getProductRepresentationMap().values());
+//        Order o1 = new Order(clients.get(0).getSecurityNumber(), products.get(1).getBarcode());
+//        Order o2 = new Order(clients.get(1).getSecurityNumber(), products.get(1).getBarcode());
+//        Order o3 = new Order(clients.get(2).getSecurityNumber(), products.get(2).getBarcode());
+////        Order o4 = new Order(createRepresenter(clients.get(2)), products.get(0));
+////        Order o5 = new Order(createRepresenter(clients.get(1)), products.get(2));
+////        Order o6 = new Order(createRepresenter(clients.get(1)), products.get(1));
+////        Order o7 = new Order(createRepresenter(clients.get(0)), products.get(2));
+////        Order o8 = new Order(createRepresenter(clients.get(0)), products.get(0));
+////        Order o9 = new Order(createRepresenter(clients.get(0)), products.get(1));
+////        Order o10 = new Order(createRepresenter(clients.get(1)), products.get(1));
+////        Order o11 = new Order(createRepresenter(clients.get(0)), products.get(1));
+////        Order o12 = new Order(createRepresenter(clients.get(2)), products.get(1));
+//
+//        long l1 = System.currentTimeMillis();
+//        long l2 = l1 - l1 % 1000;
+//        long l  = l2 - l2 % 86400;
+//
+//        o1.setTransactionDate(l);
+//        o2.setTransactionDate(l);
+//        o3.setTransactionDate(l);
+////        o4.setTransactionDate(l-9000009000L);
+////        o5.setTransactionDate(l+9000009000L);
+////        o6.setTransactionDate(l-99999999L);
+////        o7.setTransactionDate(l-90000090000L);
+////        o8.setTransactionDate(l-90000090000L);
+////        o9.setTransactionDate(l-90000090000L);
+////        o10.setTransactionDate(l-90000090000L);
+////        o11.setTransactionDate(l-90000090000L);
+////        o12.setTransactionDate(l-90000090000L);
+//
+//        orders.add(o1);
+//        orders.add(o2);
+//        orders.add(o3);
+////        orders.add(o4);
+////        orders.add(o5);
+////        orders.add(o6);
+////        orders.add(o7);
+////        orders.add(o8);
+////        orders.add(o9);
+////        orders.add(o10);
+////        orders.add(o11);
+////        orders.add(o12);
+//        return orders;
+//    }
 
     private boolean isClientPresent(Order order) {
         List<Client> clients = new ArrayList<>(ClientServiceImpl.getClientRepresentationMap().values());

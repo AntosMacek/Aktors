@@ -59,12 +59,24 @@ public class Product {
         this.releaseDate = releaseDate;
     }
 
+//    @Override
+//    public String toString() {
+//        return "Product{" +
+//                "barcode=" + barcode + " " +
+//                "name='" + name + '\'' +
+//                ", basePrice=" + basePrice +
+//                '}';
+//    }
+
+
     @Override
     public String toString() {
         return "Product{" +
-                "barcode=" + barcode + " " +
-                "name='" + name + '\'' +
+                "barcode=" + barcode +
+                ", name='" + name + '\'' +
                 ", basePrice=" + basePrice +
+                ", description='" + description + '\'' +
+                ", releaseDate='" + releaseDate + '\'' +
                 '}';
     }
 }

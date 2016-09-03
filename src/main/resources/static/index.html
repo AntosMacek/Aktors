@@ -9,16 +9,6 @@
         <div class="main" ng-controller="MainController">
             <h1>{{ title }}</h1>
 
-            <div class="menu">
-
-                <ul>
-                    <li>clients</li>
-                    <li>products</li>
-                    <li>orders</li>
-                </ul>
-
-            </div>
-
             <div class="tables">
 
                 <div class="clients">
@@ -243,7 +233,7 @@
                                             <th>Client</th>
                                             <th>Product</th>
                                             <th>Converted price</th>
-                                            <th><a href="#" ng-click="setOrder(['transactionDate', 'product', 'client'])">Transaction date</a></th>
+                                            <th><a href="#" ng-click="setOrder(['transactionDate', 'product.name', 'client.representer'])">Transaction date</a></th>
                                             <th width="20%"></th>
                                         </tr>
                                         </thead>

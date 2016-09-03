@@ -66,9 +66,20 @@ public class Order {
     @Override
     public String toString() {
         return "Order{" +
-                "client=" + client +
+                "orderNr=" + orderNr +
+                ", client=" + client +
                 ", product=" + product +
                 ", convertedPrice=" + convertedPrice +
+                ", transactionDate=" + transactionDate +
                 '}';
     }
+
+    //    @Override
+//    public String toString() {
+//        return "Order{" +
+//                "client=" + client +
+//                ", product=" + product +
+//                ", convertedPrice=" + convertedPrice +
+//                '}';
+//    }
 }
